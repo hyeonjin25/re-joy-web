@@ -27,7 +27,9 @@ class App extends React.Component {
             <div>
                 {isLoding 
                  ? (<div className="loder">
+                    {/* 로딩창 */}
                      <span className="loder_text">Lodding...</span>
+                    {/* //로딩창 */}
                  </div>
                  ):(
                     <div className="App">

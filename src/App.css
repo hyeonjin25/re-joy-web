@@ -22,7 +22,8 @@ nav .search {height: 50px; background-color: #99b866;}
 nav .menu {height: 50px; background-color: #d1eaa9;}
 
 /* 컨텐츠 - 추천 */
-#content .recommend {height: 700px; background-color: #96bb7c;}
+#content .recommend { background-color: #96bb7c;}
+#content .recommend .movies {overflow: hidden;}
 
 /* 컨텐츠 - 분류 */
 #content .category {height: 1000px; background-color: #d6efc7;}
