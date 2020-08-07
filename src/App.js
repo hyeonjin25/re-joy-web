@@ -13,7 +13,7 @@ class App extends React.Component {
     };
 
     getMovies = async() => {
-        const {data: {data: {movies}}} = await axios.get("https://yts-proxy.now.sh/list_movies.json?sort_by=rating");
+        const {data: {data: {movies}}} = await axios.get("https://yts-proxy.now.sh/list_movies.json?sort_by=like_count");
         this.setState({movies, isLoding: false});
     };
 
@@ -39,7 +39,10 @@ class App extends React.Component {
                         {/* 로그인 */}
                             <div className="header_top">
                                 <div className="container">
-                                    <a href="#">로그인</a>
+                                    <ul>
+                                        <li className="login"><a href="#">로그인</a></li>
+                                        <li className="mypage"><a href="#">마이페이지</a></li>
+                                    </ul>
                                 </div>
                             </div>
                         {/* //로그인 */}
@@ -97,6 +100,7 @@ class App extends React.Component {
                                                 summary={movie.summary} 
                                                 poster={movie.medium_cover_image}
                                                 genres={movie.genres}
+                                                rating={movie.rating}
                                             />
                                         ))}
                                     </div>

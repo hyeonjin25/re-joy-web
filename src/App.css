@@ -7,13 +7,14 @@ body {}
 /* 헤더 */
 header {position: relative;}
 header .header_top {height: 30px;background-color: #fff;}
-header .header_top a {position: absolute; top: 5px; right: 200px;}
+header .header_top ul {overflow: hidden; position: absolute; top: 5px; right: 150px;}
+header .header_top li {float: left; margin-right: 10px;}
 header .header_center {height: 100; background-color: #fcf876;}
 header .header_center h1{text-align: center; line-height: 100px;}
 header .linker {height: 30px; overflow: hidden; background-color: #fff;}
 header .linker ul {position: absolute; bottom: 5px; right: 150px;}
 header .linker li {float: left;}
-header .linker li a {display: block; padding-right: 10px;}
+header .linker li a {padding-right: 10px;}
 
 /* 네비게이션 - 검색 */
 nav .search {height: 50px; background-color: #99b866;}
