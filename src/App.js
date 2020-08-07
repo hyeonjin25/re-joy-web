@@ -4,6 +4,7 @@ import Movie from "./Movie"
 import './reset.css';
 import './App.css';
 import { render } from '@testing-library/react';
+import { arrayOf } from 'prop-types';
 
 class App extends React.Component {
     state = {
@@ -32,33 +33,56 @@ class App extends React.Component {
                     <div className="App">
                     <div id="wrap">
                       <header>
-                          <h1><a href="#">Re-joy</a></h1>
-                          <div className="linker">
-                              <ul>
-                                 <li><a href="https://www.netflix.com/browse" target="_blank">넷플릭스</a></li>
-                                 <li><a href="https://play.watcha.net/" target="_blank">왓챠</a></li>
-                                 <li><a href="https://www.wavve.com/" target="_blank">웨이브</a></li>
-                             </ul>
-                         </div>
+                        <div className="header">
+                        {/* 로그인 */}
+                            <div className="header_top">
+                                <div className="container">
+                                    <a href="#">로그인</a>
+                                </div>
+                            </div>
+                        {/* //로그인 */}
+                        {/* 웹 이름 */}
+                            <div className="header_center">
+                                <div className="container">
+                                    <h1><a href="#">Re-joy</a></h1>
+                                </div>
+                            </div>
+                        {/* //웹 이름 */}
+                        {/* 링크 */}
+                            <div className="linker">
+                                <div className="container">
+                                    <ul>
+                                        <li><a href="https://www.netflix.com/browse" target="_blank">넷플릭스</a></li>
+                                        <li><a href="https://play.watcha.net/" target="_blank">왓챠</a></li>
+                                        <li><a href="https://www.wavve.com/" target="_blank">웨이브</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        {/* //링크 */}
+                        </div>
                      </header>
+
                      <nav>
-                         <div className="container">
-                             <div className="search">
-                                 {/*검색*/} 
+                        {/* 검색 */} 
+                        <div className="search">
+                            <div className="container">
                                  <h2>search</h2>
-                                 {/*검색*/}
                              </div>
-                             <div className="menu">
-                                 {/*메뉴 */}
+                        </div>
+                        {/* //검색 */}
+                        {/* 메뉴 */}
+                        <div className="menu">
+                            <div className="container">
                                  <h2>menu</h2>
-                                 {/*메뉴*/}
                              </div>
                          </div>
+                        {/* //메뉴 */}
                      </nav>
+
                      <div id="content">
-                         <div className="container">
-                             <div className="recommend">
-                                 {/*추천 */}
+                        {/* 추천 */}
+                        <div className="recommend">
+                            <div className="container">
                                  <section>
                                     <h3 className="ir_su">recommend</h3>
                                     <div className="movies">
@@ -75,20 +99,22 @@ class App extends React.Component {
                                         ))}
                                     </div>
                                  </section>
-                                 {/*추천 */}
                              </div>
-                             <div className="category">
-                                 {/*분류 */}
+                        </div>
+                        {/* //추천 */}
+                        {/* 분류 */}
+                        <div className="category">
+                             <div className="container">
                                  <section>
                                      <h3>분류</h3>
                                  </section>
-                                 {/*분류 */}
                              </div> 
-                         </div>
+                        </div>
+                        {/* //분류 */}
                      </div>
                      <footer>
-                         <div className="container">
-                             <div className="footer">
+                        <div className="footer">
+                            <div className="container">
                                  <h2>푸터</h2>
                              </div>
                          </div>
