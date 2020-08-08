@@ -24,7 +24,7 @@ class App extends React.Component {
     render() {
         const {isLoding, movies} = this.state;
         return(
-            <div>
+            <section className="cont">
                 {isLoding 
                  ? (<div className="loder">
                     {/* 로딩창 */}
@@ -40,8 +40,8 @@ class App extends React.Component {
                             <div className="header_top">
                                 <div className="container">
                                     <ul>
-                                        <li className="login"><a href="#">로그인</a></li>
-                                        <li className="mypage"><a href="#">마이페이지</a></li>
+                                        <li className="login"><a href="#">Login</a></li>
+                                        <li className="mypage"><a href="#">Mypage</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -57,9 +57,9 @@ class App extends React.Component {
                             <div className="linker">
                                 <div className="container">
                                     <ul>
-                                        <li><a href="https://www.netflix.com/browse" target="_blank">넷플릭스</a></li>
-                                        <li><a href="https://play.watcha.net/" target="_blank">왓챠</a></li>
-                                        <li><a href="https://www.wavve.com/" target="_blank">웨이브</a></li>
+                                        <li><a href="https://www.netflix.com/browse" target="_blank">Netflix</a></li>
+                                        <li><a href="https://play.watcha.net/" target="_blank">Watcha</a></li>
+                                        <li><a href="https://www.wavve.com/" target="_blank">Wave</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -128,65 +128,9 @@ class App extends React.Component {
                     </div>
                  </div>                           
                  )}                        
-            </div>
+            </section>
         );
     }
-
-//   return (
-//     <div className="App">
-//       <div id="wrap">
-//         <header>
-//             <h1><a href="#">Movie Web</a></h1>
-//             <div class="linker">
-//                 <ul>
-//                     <li><a href="https://www.netflix.com/browse" target="_blank">넷플릭스</a></li>
-//                     <li><a href="https://play.watcha.net/" target="_blank">왓챠</a></li>
-//                     <li><a href="https://www.wavve.com/" target="_blank">웨이브</a></li>
-//                 </ul>
-//             </div>
-//         </header>
-//         <nav>
-//             <div class="container">
-//                 <div class="search">
-//                     {/*검색*/} 
-//                     <h2>search</h2>
-//                     {/*검색*/}
-//                 </div>
-//                 <div class="menu">
-//                     {/*메뉴 */}
-//                     <h2>menu</h2>
-//                     {/*메뉴*/}
-//                 </div>
-//             </div>
-//         </nav>
-//         <div id="content">
-//             <div class="container">
-//                 <div class="recommend">
-//                     {/*추천 */}
-//                     <section>
-//                         <h3>recommend</h3>
-//                     </section>
-//                     {/*추천 */}
-//                 </div>
-//                 <div class="category">
-//                     {/*분류 */}
-//                     <section>
-//                         <h3>분류</h3>
-//                     </section>
-//                     {/*분류 */}
-//                 </div> 
-//             </div>
-//         </div>
-//         <footer>
-//             <div class="container">
-//                 <div class="footer">
-//                     <h2>푸터</h2>
-//                 </div>
-//             </div>
-//         </footer>
-//     </div>
-//     </div>
-//   );
 }
 
 export default App;
