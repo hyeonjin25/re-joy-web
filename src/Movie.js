@@ -6,10 +6,13 @@ import './Movie.css';
 function Movie({year, title, summary, poster, genres, rating}){
     return (
     <div className="movie">
-        <img src={poster} alt={title} title={title} />
+        <img className="poster" src={poster} alt={title} title={title} />
         <div className="movie_data">
             <h3 className="movie_title">{title.slice(0,25)}{(title.length>28)?"...":""}</h3>
-            <h5 className="movie_rating">{rating}</h5>
+            <div className="movie_rating">
+                <img className="star_icon" src={ require("./img/star_icon.png") } alt="rating"/>
+                <h5 className="rating_text">{rating}</h5>
+            </div>
             {/*<h5 className="movie_year">{year}</h5>*/}
             {/*<ul className="genres">
                 {genres.map((genre, index) => (
