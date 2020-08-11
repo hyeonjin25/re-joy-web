@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/re-joy-web/static/css/main.1c68ee44.chunk.css",
+    "main.js": "/re-joy-web/static/js/main.2f2223a2.chunk.js",
+    "main.js.map": "/re-joy-web/static/js/main.2f2223a2.chunk.js.map",
+    "runtime-main.js": "/re-joy-web/static/js/runtime-main.0ad43781.js",
+    "runtime-main.js.map": "/re-joy-web/static/js/runtime-main.0ad43781.js.map",
+    "static/js/2.cae0b204.chunk.js": "/re-joy-web/static/js/2.cae0b204.chunk.js",
+    "static/js/2.cae0b204.chunk.js.map": "/re-joy-web/static/js/2.cae0b204.chunk.js.map",
+    "index.html": "/re-joy-web/index.html",
+    "precache-manifest.109104e3c195e4a51f9fa513ad38421b.js": "/re-joy-web/precache-manifest.109104e3c195e4a51f9fa513ad38421b.js",
+    "service-worker.js": "/re-joy-web/service-worker.js",
+    "static/css/main.1c68ee44.chunk.css.map": "/re-joy-web/static/css/main.1c68ee44.chunk.css.map",
+    "static/js/2.cae0b204.chunk.js.LICENSE.txt": "/re-joy-web/static/js/2.cae0b204.chunk.js.LICENSE.txt",
+    "static/media/star_icon.png": "/re-joy-web/static/media/star_icon.45dd5470.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0ad43781.js",
+    "static/js/2.cae0b204.chunk.js",
+    "static/css/main.1c68ee44.chunk.css",
+    "static/js/main.2f2223a2.chunk.js"
+  ]
+}
