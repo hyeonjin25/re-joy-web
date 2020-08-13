@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from "axios";
-import Movie from "./Movie"
+import Movie from "./Movie";
+import Tvshow from "./Tvshow";
 import './reset.css';
 import './App.css';
 import { render } from '@testing-library/react';
@@ -8,24 +9,32 @@ import { arrayOf } from 'prop-types';
 
 class App extends React.Component {
     state = {
-        isLoding: true,
-        movies:[]
+        m_isLoding: true,
+        t_isLoding: true,
+        movies:[],
+        tvshows:[]
     };
 
     getMovies = async() => {
         const {data: {data: {movies}}} = await axios.get("https://yts-proxy.now.sh/list_movies.json?sort_by=like_count");
-        this.setState({movies, isLoding: false});
+        this.setState({movies, m_isLoding: false});
+    };
+
+    getTvshows = async() => {
+        const {data} = await axios.get("http://api.tvmaze.com/shows");
+        this.setState({tvshows:data, t_isLoding: false});
     };
 
     componentDidMount() {
         this.getMovies();
+        this.getTvshows();
     }
     
     render() {
-        const {isLoding, movies} = this.state;
+        const {m_isLoding, t_isLoding, movies, tvshows} = this.state;
         return(
             <section className="cont">
-                {isLoding 
+                {(m_isLoding&&t_isLoding)
                  ? (<div className="loder">
                     {/* 로딩창 */}
                      <span className="loder_text">Lodding...</span>
@@ -90,20 +99,35 @@ class App extends React.Component {
                         <div className="recommend">
                             <div className="container">
                                  <section>
-                                    <h3 className="ir_su">recommend</h3>
-                                    <div className="movies">
-                                        {movies.map(movie => (
-                                            <Movie 
-                                                key={movie.id} 
-                                                id={movie.id} 
-                                                year={movie.year} 
-                                                title={movie.title} 
-                                                summary={movie.summary} 
-                                                poster={movie.medium_cover_image}
-                                                genres={movie.genres}
-                                                rating={movie.rating}
-                                            />
-                                        ))}
+                                     <div>
+                                        <h3 className="ir_su">recommend</h3>
+                                        <div className="movies">
+                                            {movies.map(movie => (
+                                                <Movie 
+                                                    key={movie.id} 
+                                                    id={movie.id} 
+                                                    year={movie.year} 
+                                                    title={movie.title} 
+                                                    summary={movie.summary} 
+                                                    poster={movie.medium_cover_image}
+                                                    genres={movie.genres}
+                                                    rating={movie.rating}
+                                                />
+                                            ))}
+                                        </div>
+                                        <div className="tvshows">
+                                            {tvshows.map(tvshow => (
+                                                <Tvshow 
+                                                    key={tvshow.id}
+                                                    id={tvshow.id}
+                                                    name={tvshow.name}
+                                                    summary={tvshow.summary}
+                                                    image={tvshow.image.medium}
+                                                    genres={tvshow.genres}
+                                                    rating={tvshow.rating.average}
+                                                />
+                                            ))}
+                                        </div>
                                     </div>
                                  </section>
                              </div>
