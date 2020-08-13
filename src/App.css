@@ -25,7 +25,10 @@ header .linker li a {padding-right: 20px;}
 /* 네비게이션 - 검색 */
 nav .search {height: 50px;}
 nav .search .container {border-bottom: 1px solid gray;}
-nav .search .search_cont {text-align: center; line-height: 50px;}
+nav .search .search_cont {overflow: hidden;line-height: 50px; text-align: center;}
+nav .search .search_text {float: left;}
+nav .search .search_button {float: left; width: 10px;}
+nav .search .search_button input {width: 50px;}
 nav .search span {font-weight: bold;}
 nav .search input {width: 600px; height: 30px; border: 2px solid gray;}
 

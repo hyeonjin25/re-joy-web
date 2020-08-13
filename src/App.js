@@ -81,7 +81,10 @@ class App extends React.Component {
                         <div className="search">
                             <div className="container">
                                  <h2 className="ir_su">search</h2>
-                                 <div className="search_cont"><span>search : </span><input type="text" id="input_search" placeholder="  Enter the content you want to find!"/></div>
+                                 <div className="search_cont">
+                                    <div className="search_text"><input type="text" id="input_text" placeholder=" search"/></div>
+                                    <div className="search_button"><input type="button" id="input_button" value="search"/></div>
+                                 </div>
                              </div>
                         </div>
                         {/* //검색 */}
