@@ -10,7 +10,7 @@ function Movie({year, title, summary, poster, genres, rating}){
         <div className="movie_data">
             <h3 className="movie_title">{title.slice(0,25)}{(title.length>28)?"...":""}</h3>
             <div className="movie_rating">
-                <img className="star_icon" src={ require("./img/star_icon.png") } alt="rating"/>
+                <img className="star_icon" src={ require("../img/star_icon.png") } alt="rating"/>
                 <h5 className="rating_text">{rating}</h5>
             </div>
             {/*<h5 className="movie_year">{year}</h5>*/}

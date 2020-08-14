@@ -10,7 +10,7 @@ function Tvshow({name, summary, image, genres, rating}){
         <div className="tvshow_data">
             <h3 className="tvshow_name">{name.slice(0,25)}{(name.length>28)?"...":""}</h3>
             <div className="tvshow_rating">
-                <img className="star_icon" src={ require("./img/star_icon.png") } alt="rating"/>
+                <img className="star_icon" src={ require("../img/star_icon.png") } alt="rating"/>
                 <h5 className="rating_text">{rating}</h5>
             </div>
         </div>

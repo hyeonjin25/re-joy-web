@@ -26,7 +26,8 @@ header .linker li a {padding-right: 20px;}
 nav .search .container {height: 50px; display:flex; justify-content: center; align-items: center; border-bottom: 1px solid gray;}
 nav .search .search_cont {position: relative;}
 nav .search .search_cont input {width: 600px; height: 33px; padding: 1px 10px 1px 10px; border: 1px solid gray;}
-nav .search .search_cont button {position: absolute; top: 0; right: 0; width: 38px; height: 37px; margin-left: -1px; border: 1px solid gray; background: url(./img/search_icon.png) no-repeat; background-position: 5px 5px;}
+nav .search .search_cont button {position: absolute; top: 0; right: 0; width: 38px; height: 37px; margin-left: -1px; border: 1px solid gray; 
+    background: url(../img/search_icon.png) no-repeat; background-position: 5px 5px;}
 nav .search .search_cont .search_button {display: inline-block;}
 
 /* 네비게이션 - 메뉴 */
@@ -36,7 +37,7 @@ nav .menu .container {border-bottom: 1px solid gray;}
 /* 컨텐츠 - 추천 */
 #content .recommend .container { background-color: rgba(229, 204, 255, 0.3);}
 #content .recommend .movies {overflow: hidden;}
-#content .recommend .tvshows     {overflow: hidden;}
+#content .recommend .tvshows {overflow: hidden;}
 
 /* 컨텐츠 - 분류 */
 #content .category {height: 1000px;}
