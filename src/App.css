@@ -23,14 +23,11 @@ header .linker li {float: left;}
 header .linker li a {padding-right: 20px;}
 
 /* 네비게이션 - 검색 */
-nav .search {height: 50px;}
-nav .search .container {border-bottom: 1px solid gray;}
-nav .search .search_cont {overflow: hidden;line-height: 50px; text-align: center;}
-nav .search .search_text {float: left;}
-nav .search .search_button {float: left; width: 10px;}
-nav .search .search_button input {width: 50px;}
-nav .search span {font-weight: bold;}
-nav .search input {width: 600px; height: 30px; border: 2px solid gray;}
+nav .search .container {height: 50px; display:flex; justify-content: center; align-items: center; border-bottom: 1px solid gray;}
+nav .search .search_cont {position: relative;}
+nav .search .search_cont input {width: 600px; height: 33px; padding: 1px 10px 1px 10px; border: 1px solid gray;}
+nav .search .search_cont button {position: absolute; top: 0; right: 0; width: 38px; height: 37px; margin-left: -1px; border: 1px solid gray; background: url(./img/search_icon.png) no-repeat; background-position: 5px 5px;}
+nav .search .search_cont .search_button {display: inline-block;}
 
 /* 네비게이션 - 메뉴 */
 nav .menu {height: 50px;}

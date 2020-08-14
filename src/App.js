@@ -78,15 +78,17 @@ class App extends React.Component {
 
                      <nav>
                         {/* 검색 */} 
-                        <div className="search">
+                        <feildset className="search">
                             <div className="container">
-                                 <h2 className="ir_su">search</h2>
-                                 <div className="search_cont">
-                                    <div className="search_text"><input type="text" id="input_text" placeholder=" search"/></div>
-                                    <div className="search_button"><input type="button" id="input_button" value="search"/></div>
-                                 </div>
-                             </div>
-                        </div>
+                                <legend className="ir_su">search</legend>
+                                <form className="search_cont">
+                                <input type="text" id="input_text" placeholder="search" maxLength="50"/>
+                                <button>
+                                    <span className="search_button"></span>
+                                </button>
+                                </form>
+                            </div>
+                        </feildset>
                         {/* //검색 */}
                         {/* 메뉴 */}
                         <div className="menu">
