@@ -24,7 +24,7 @@ Tvshow.propTypes = {
     summary: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     genres: PropTypes.arrayOf(PropTypes.string).isRequired,
-    rating: PropTypes.number.isRequired
+    //rating: PropTypes.number.isRequired
 }
 
 export default Tvshow;

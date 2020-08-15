@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from "axios";
+import { Link } from "react-router-dom";
 import Movie from "../components/Movie";
 import Tvshow from "../components/Tvshow";
 import '../components/reset.css';
@@ -50,7 +51,14 @@ class Home extends React.Component {
                                 <div className="container">
                                     <ul>
                                         <li className="login"><a href="#">Login</a></li>
-                                        <li className="mypage"><a href="#">Mypage</a></li>
+                                        <Link to={{
+                                            pathname: "/Mypage",
+                                            state: {
+
+                                            }
+                                        }}>
+                                            <li className="mypage"><a href="#">Mypage</a></li>
+                                        </Link>
                                     </ul>
                                 </div>
                             </div>
