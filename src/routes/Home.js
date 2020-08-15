@@ -56,8 +56,7 @@ class Home extends React.Component {
                                             state: {
 
                                             }
-                                        }}>
-                                            <li className="mypage"><a href="#">Mypage</a></li>
+                                        }}><li className="mypage">Mypage</li>
                                         </Link>
                                     </ul>
                                 </div>
@@ -86,7 +85,7 @@ class Home extends React.Component {
 
                      <nav>
                         {/* 검색 */} 
-                        <feildset className="search">
+                        <fieldset className="search">
                             <div className="container">
                                 <legend className="ir_su">search</legend>
                                 <form className="search_cont">
@@ -96,7 +95,7 @@ class Home extends React.Component {
                                 </button>
                                 </form>
                             </div>
-                        </feildset>
+                        </fieldset>
                         {/* //검색 */}
                         {/* 메뉴 */}
                         <div className="menu">

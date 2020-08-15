@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, HashRouter,Route } from "react-router-dom";
+import { HashRouter,Route } from "react-router-dom";
 import Mypage from "./routes/Mypage"
 import Home from "./routes/Home"
 
