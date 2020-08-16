@@ -9,10 +9,11 @@ a {color: #222; text-decoration: none;}
 a:hover {text-decoration: underline;}
 
 /* 볼릿기호 초기화 */
-dl,ul,li,ol,menu{list-style: none;}
+dl,ul,li,ol,menu {list-style: none;}
 
 /* border초기화 */
-input, text, button, fieldset{border: none;}
+input, text, button, fieldset {border: none;}
+input:focus, button:focus {outline:none;}
 
 /* IR 효과 */
 /* 의미있는 이미지의 대체 텍스트를 제공하는 경우 */

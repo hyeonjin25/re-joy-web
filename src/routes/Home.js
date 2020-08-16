@@ -48,7 +48,7 @@ class Home extends React.Component {
                             <div className="header_top">
                                 <div className="container">
                                     <ul>
-                                        <li className="login"><a href="#">Login</a></li>
+                                        <li className="login">Login</li>
                                         <Link to={{
                                             pathname: "/Mypage",
                                             state: {
@@ -63,7 +63,7 @@ class Home extends React.Component {
                         {/* 웹 이름 */}
                             <div className="header_center">
                                 <div className="container">
-                                    <h1><a href="#">Re-joy</a></h1>
+                                    <h1>Re-joy</h1>
                                 </div>
                             </div>
                         {/* //웹 이름 */}
@@ -112,6 +112,7 @@ class Home extends React.Component {
                                      <div>
                                         <h3 className="ir_su">recommend</h3>
                                         <div className="movies">
+                                            <h3>추천 영화</h3>
                                             {movies.map(movie => (
                                                 <Movie 
                                                     key={movie.id} 
@@ -126,6 +127,7 @@ class Home extends React.Component {
                                             ))} 
                                         </div>
                                         <div className="tvshows">
+                                            <h3>추천 티비쇼</h3>
                                             {tvshows.map(tvshow => (
                                                 <Tvshow 
                                                     key={tvshow.id}
