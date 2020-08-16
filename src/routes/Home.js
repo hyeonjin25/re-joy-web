@@ -16,13 +16,12 @@ class Home extends React.Component {
 
     getMovies = async() => {
         const {data: {results}} = await axios.get("https://api.themoviedb.org/3/movie/now_playing?api_key=9aa38313510a50c3ae30091b52efcc90&language=ko&page=1®ion=KR");
-        console.log(results);
         this.setState({movies:results, m_isLoding: false});
     };
 
      getTvshows = async() => {
-         const {data} = await axios.get("http://api.tvmaze.com/shows");
-         this.setState({tvshows:data, t_isLoding: false});
+         const {data: {results}} = await axios.get("https://api.themoviedb.org/3/tv/on_the_air?api_key=9aa38313510a50c3ae30091b52efcc90&language=ko&page=1");
+         this.setState({tvshows:results, t_isLoding: false});
      };
 
     componentDidMount() {
@@ -117,8 +116,8 @@ class Home extends React.Component {
                                                 <Movie 
                                                     key={movie.id} 
                                                     id={movie.id} 
-                                                    date={movie.release_date} 
                                                     title={movie.title} 
+                                                    date={movie.release_date} 
                                                     summary={movie.overview} 
                                                     poster={movie.poster_path}
                                                     genres={movie.genre_ids}
@@ -131,11 +130,12 @@ class Home extends React.Component {
                                                 <Tvshow 
                                                     key={tvshow.id}
                                                     id={tvshow.id}
-                                                    name={tvshow.name}
-                                                    summary={tvshow.summary}
-                                                    image={tvshow.image.medium}
-                                                    genres={tvshow.genres}
-                                                    rating={tvshow.rating.average}
+                                                    title={tvshow.name}
+                                                    date={tvshow.first_air_date}
+                                                    summary={tvshow.overview}
+                                                    poster={tvshow.poster_path}
+                                                    genres={tvshow.genre_ids}
+                                                    rating={tvshow.vote_average}
                                                 />
                                             ))}
                                         </div>

@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 import './reset.css';
 import './Tvshow.css';
 
-function Tvshow({name, summary, image, genres, rating}){
+function Tvshow({id, title, poster, summary, genres, date, rating}){
     return (
     <div className="tvshow">
-        <img className="image" src={image} alt={name} title={name} />
+        <img className="poster" src={"https://image.tmdb.org/t/p/w500"+poster} alt={title} title={title} />
         <div className="tvshow_data">
-            <h3 className="tvshow_name">{name.slice(0,25)}{(name.length>28)?"...":""}</h3>
+            <h3 className="tvshow_title">{title.slice(0,15)}{(title.length>15)?"...":""}</h3>
             <div className="tvshow_rating">
                 <img className="star_icon" src={ require("../img/star_icon.png") } alt="rating"/>
                 <h5 className="rating_text">{rating}</h5>
@@ -20,11 +20,12 @@ function Tvshow({name, summary, image, genres, rating}){
 
 Tvshow.propTypes = {
     id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     summary: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    genres: PropTypes.arrayOf(PropTypes.string).isRequired,
-    //rating: PropTypes.number.isRequired
+    poster: PropTypes.string.isRequired,
+    genres: PropTypes.arrayOf(PropTypes.number).isRequired,
+    rating: PropTypes.number.isRequired
 }
 
 export default Tvshow;
