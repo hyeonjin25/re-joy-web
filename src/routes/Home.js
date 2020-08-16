@@ -70,11 +70,11 @@ class Home extends React.Component {
                         {/* 링크 */}
                             <div className="linker">
                                 <div className="container">
-                                    <ul>
+                                    {/* <ul>
                                         <li><a href="https://www.netflix.com/browse" target="_blank">Netflix</a></li>
                                         <li><a href="https://play.watcha.net/" target="_blank">Watcha</a></li>
                                         <li><a href="https://www.wavve.com/" target="_blank">Wave</a></li>
-                                    </ul>
+                                    </ul> */}
                                 </div>
                             </div>
                         {/* //링크 */}
