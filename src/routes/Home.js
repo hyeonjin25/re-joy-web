@@ -5,8 +5,6 @@ import Movie from "../components/Movie";
 import Tvshow from "../components/Tvshow";
 import '../components/reset.css';
 import './Home.css';
-import { render } from '@testing-library/react';
-import { arrayOf } from 'prop-types';
 
 class Home extends React.Component {
     state = {
@@ -17,14 +15,15 @@ class Home extends React.Component {
     };
 
     getMovies = async() => {
-        const {data: {data: {movies}}} = await axios.get("https://yts-proxy.now.sh/list_movies.json?sort_by=like_count");
-        this.setState({movies, m_isLoding: false});
+        const {data: {results}} = await axios.get("https://api.themoviedb.org/3/movie/now_playing?api_key=9aa38313510a50c3ae30091b52efcc90&language=ko&page=1®ion=KR");
+        console.log(results);
+        this.setState({movies:results, m_isLoding: false});
     };
 
-    getTvshows = async() => {
-        const {data} = await axios.get("http://api.tvmaze.com/shows");
-        this.setState({tvshows:data, t_isLoding: false});
-    };
+     getTvshows = async() => {
+         const {data} = await axios.get("http://api.tvmaze.com/shows");
+         this.setState({tvshows:data, t_isLoding: false});
+     };
 
     componentDidMount() {
         this.getMovies();
@@ -89,7 +88,7 @@ class Home extends React.Component {
                             <div className="container">
                                 <legend className="ir_su">search</legend>
                                 <form className="search_cont">
-                                <input type="text" id="input_text" placeholder="search" maxLength="50"/>
+                                <input type="text" id="input_search" placeholder="search" maxLength="50"/>
                                 <button>
                                     <span className="search_button"></span>
                                 </button>
@@ -118,14 +117,14 @@ class Home extends React.Component {
                                                 <Movie 
                                                     key={movie.id} 
                                                     id={movie.id} 
-                                                    year={movie.year} 
+                                                    date={movie.release_date} 
                                                     title={movie.title} 
-                                                    summary={movie.summary} 
-                                                    poster={movie.medium_cover_image}
-                                                    genres={movie.genres}
-                                                    rating={movie.rating}
+                                                    summary={movie.overview} 
+                                                    poster={movie.poster_path}
+                                                    genres={movie.genre_ids}
+                                                    rating={movie.vote_average}
                                                 />
-                                            ))}
+                                            ))} 
                                         </div>
                                         <div className="tvshows">
                                             {tvshows.map(tvshow => (

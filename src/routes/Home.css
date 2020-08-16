@@ -36,8 +36,6 @@ nav .menu .container {border-bottom: 1px solid gray;}
 
 /* 컨텐츠 - 추천 */
 #content .recommend .container { background-color: rgba(229, 204, 255, 0.3);}
-#content .recommend .movies {overflow: hidden;}
-#content .recommend .tvshows {overflow: hidden;}
 
 /* 컨텐츠 - 분류 */
 #content .category {height: 1000px;}

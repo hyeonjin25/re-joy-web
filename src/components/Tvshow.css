@@ -1,4 +1,4 @@
-.tvshow {position: relative ;float: left; margin: 5px 10px 10px 30px;}
+.tvshow {position: relative ; display: inline-block; margin: 5px 10px 10px 30px;}
 .tvshow .image {width: 230px; padding-bottom: 0; margin-bottom: 0;}
 .tvshow .tvshow_data .tvshow_name {font-size: 13px;}
 .tvshow .tvshow_data .tvshow_rating {overflow: hidden; position: absolute; bottom: 0px; right: 5px;}

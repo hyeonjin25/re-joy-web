@@ -1,8 +1,7 @@
 import React from 'react';
 
-function Mypage(props){
-    console.log(props);
-    return <span>this page is Mypage</span>
+function Mypage(){
+    return <span>this page is for Mypage</span>
 }
 
 export default Mypage;
