@@ -5,6 +5,9 @@ import Movie from "../components/Movie";
 import Tvshow from "../components/Tvshow";
 import '../components/reset.css';
 import './Home.css';
+import Slider from "react-slick";
+import "~slick-carousel/slick/slick.css"; 
+import "~slick-carousel/slick/slick-theme.css";
 
 class Home extends React.Component {
     state = {
@@ -31,6 +34,13 @@ class Home extends React.Component {
     
     render() {
         const {m_isLoding, t_isLoding, movies, tvshows} = this.state;
+        const slick_setting ={
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        }
         return(
             <section className="cont">
                 {(m_isLoding&&t_isLoding)
@@ -112,7 +122,9 @@ class Home extends React.Component {
                                      <div>
                                         <h3 className="ir_su">recommend</h3>
                                         <div className="movies">
-                                            <h3>추천 영화</h3>
+                                            {/* <Slider {...slick_setting}>
+                                            <div><h3>추천 영화</h3></div>
+                                            </Slider> */}
                                             {movies.map(movie => (
                                                 <Movie 
                                                     key={movie.id} 
