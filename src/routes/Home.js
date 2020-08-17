@@ -39,7 +39,8 @@ class Home extends React.Component {
             infinite: true,
             speed: 500,
             slidesToShow: 4,
-            slidesToScroll: 4
+            slidesToScroll: 4,
+            autoplay: false,
         }
         return(
             <section className="cont">
@@ -122,7 +123,7 @@ class Home extends React.Component {
                                      <div>
                                         <h3 className="ir_su">recommend</h3>
                                         <div className="movies">
-                                            <h3>추천 영화</h3>
+                                            <h3 className="recommend_sort_title">추천 영화</h3>
                                             <Slick {...slick_settings}>
                                                 {movies.map(movie => (
                                                     <Movie 
@@ -139,7 +140,7 @@ class Home extends React.Component {
                                             </Slick>
                                         </div>
                                         <div className="tvshows">
-                                            <h3>추천 티비쇼</h3>
+                                            <h3 className="recommend_sort_title">추천 티비쇼</h3>
                                             <Slick {...slick_settings}>
                                                 {tvshows.map(tvshow => (
                                                     <Tvshow 

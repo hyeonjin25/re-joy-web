@@ -1,5 +1,5 @@
-.movie {position: relative; display: inline-block; margin: 5px 10px 10px 30px;}
-.movie .poster {width:230px; padding-bottom: 0; margin-bottom: 0;}
+.movie {position: relative; display: inline-block; margin: 10px 0px 10px 13px;}
+.movie .poster {width:230px; height: 343px; padding-bottom: 0; margin-bottom: 0;}
 .movie .movie_data .movie_title {font-size: 13px;}
 .movie .movie_data .movie_rating {overflow: hidden; position: absolute; bottom: 0px; right: 5px;}
 .movie .movie_data .star_icon {width: 12px; float: left; margin-right: 4px; margin-top: 2.5px;}

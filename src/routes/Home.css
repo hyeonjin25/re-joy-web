@@ -37,7 +37,10 @@ nav .menu {height: 50px;}
 nav .menu .container {border-bottom: 1px solid gray;}
 
 /* 컨텐츠 - 추천 */
-#content .recommend .container { background-color: rgba(60,60,60,0.8);}
+#content .recommend .container {background-color: rgba(60,60,60,0.8);}
+#content .recommend .container .recommend_sort_title {margin-left: 15px;}
+#content .recommend .container .movies {margin:0 auto; width: 1030px; padding-top:20px;}
+#content .recommend .container .tvshows {margin:0 auto; width: 1030px; padding-top:50px;}
 
 /* 컨텐츠 - 분류 */
 #content .category {height: 1000px;}
