@@ -5,6 +5,9 @@ import Movie from "../components/Movie";
 import Tvshow from "../components/Tvshow";
 import '../components/reset.css';
 import './Home.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slick from "react-slick";
 
 class Home extends React.Component {
     state = {
@@ -31,6 +34,13 @@ class Home extends React.Component {
     
     render() {
         const {m_isLoding, t_isLoding, movies, tvshows} = this.state;
+        const slick_settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 4,
+            slidesToScroll: 4
+        }
         return(
             <section className="cont">
                 {(m_isLoding&&t_isLoding)
@@ -113,33 +123,37 @@ class Home extends React.Component {
                                         <h3 className="ir_su">recommend</h3>
                                         <div className="movies">
                                             <h3>추천 영화</h3>
-                                            {movies.map(movie => (
-                                                <Movie 
-                                                    key={movie.id} 
-                                                    id={movie.id} 
-                                                    title={movie.title} 
-                                                    date={movie.release_date} 
-                                                    summary={movie.overview} 
-                                                    poster={movie.poster_path}
-                                                    genres={movie.genre_ids}
-                                                    rating={movie.vote_average}
-                                                />
-                                            ))} 
+                                            <Slick {...slick_settings}>
+                                                {movies.map(movie => (
+                                                    <Movie 
+                                                        key={movie.id} 
+                                                        id={movie.id} 
+                                                        title={movie.title} 
+                                                        date={movie.release_date} 
+                                                        summary={movie.overview} 
+                                                        poster={movie.poster_path}
+                                                        genres={movie.genre_ids}
+                                                        rating={movie.vote_average}
+                                                    />
+                                                ))} 
+                                            </Slick>
                                         </div>
                                         <div className="tvshows">
                                             <h3>추천 티비쇼</h3>
-                                            {tvshows.map(tvshow => (
-                                                <Tvshow 
-                                                    key={tvshow.id}
-                                                    id={tvshow.id}
-                                                    title={tvshow.name}
-                                                    date={tvshow.first_air_date}
-                                                    summary={tvshow.overview}
-                                                    poster={tvshow.poster_path}
-                                                    genres={tvshow.genre_ids}
-                                                    rating={tvshow.vote_average}
-                                                />
-                                            ))}
+                                            <Slick {...slick_settings}>
+                                                {tvshows.map(tvshow => (
+                                                    <Tvshow 
+                                                        key={tvshow.id}
+                                                        id={tvshow.id}
+                                                        title={tvshow.name}
+                                                        date={tvshow.first_air_date}
+                                                        summary={tvshow.overview}
+                                                        poster={tvshow.poster_path}
+                                                        genres={tvshow.genre_ids}
+                                                        rating={tvshow.vote_average}
+                                                    />
+                                                ))}
+                                            </Slick>
                                         </div>
                                     </div>
                                  </section>
