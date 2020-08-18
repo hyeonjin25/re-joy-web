@@ -59,7 +59,13 @@ class Home extends React.Component {
                             <div className="header_top">
                                 <div className="container">
                                     <ul>
-                                        <li className="login">Login</li>
+                                        <Link to={{
+                                            pathname: "/Login",
+                                            state: {
+
+                                            }
+                                        }}><li className="login">Login</li>
+                                        </Link>
                                         <Link to={{
                                             pathname: "/Mypage",
                                             state: {
