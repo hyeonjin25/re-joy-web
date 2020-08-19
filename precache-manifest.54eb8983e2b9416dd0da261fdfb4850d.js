@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1138b563900e4a4f12c336d8f58be37a",
+    "revision": "41aeb8a28db8f6ce55a43362d56854a0",
     "url": "/re-joy-web/index.html"
   },
   {
-    "revision": "bf375c3fc10eefdf9f75",
+    "revision": "e20cf4693d471c1efcc6",
     "url": "/re-joy-web/static/css/2.629de7df.chunk.css"
   },
   {
-    "revision": "5bc9802191e4e1868e5f",
-    "url": "/re-joy-web/static/css/main.73bddedd.chunk.css"
+    "revision": "ba6e302a5fa5dc56b026",
+    "url": "/re-joy-web/static/css/main.9b936d61.chunk.css"
   },
   {
-    "revision": "bf375c3fc10eefdf9f75",
-    "url": "/re-joy-web/static/js/2.472ad040.chunk.js"
+    "revision": "e20cf4693d471c1efcc6",
+    "url": "/re-joy-web/static/js/2.bf503677.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/re-joy-web/static/js/2.472ad040.chunk.js.LICENSE.txt"
+    "url": "/re-joy-web/static/js/2.bf503677.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5bc9802191e4e1868e5f",
-    "url": "/re-joy-web/static/js/main.e26b0de2.chunk.js"
+    "revision": "ba6e302a5fa5dc56b026",
+    "url": "/re-joy-web/static/js/main.f5554750.chunk.js"
   },
   {
     "revision": "0354129d30a6fd2aaf6c",

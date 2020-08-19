@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/re-joy-web/static/css/main.73bddedd.chunk.css",
-    "main.js": "/re-joy-web/static/js/main.e26b0de2.chunk.js",
-    "main.js.map": "/re-joy-web/static/js/main.e26b0de2.chunk.js.map",
+    "main.css": "/re-joy-web/static/css/main.9b936d61.chunk.css",
+    "main.js": "/re-joy-web/static/js/main.f5554750.chunk.js",
+    "main.js.map": "/re-joy-web/static/js/main.f5554750.chunk.js.map",
     "runtime-main.js": "/re-joy-web/static/js/runtime-main.0ad43781.js",
     "runtime-main.js.map": "/re-joy-web/static/js/runtime-main.0ad43781.js.map",
     "static/css/2.629de7df.chunk.css": "/re-joy-web/static/css/2.629de7df.chunk.css",
-    "static/js/2.472ad040.chunk.js": "/re-joy-web/static/js/2.472ad040.chunk.js",
-    "static/js/2.472ad040.chunk.js.map": "/re-joy-web/static/js/2.472ad040.chunk.js.map",
+    "static/js/2.bf503677.chunk.js": "/re-joy-web/static/js/2.bf503677.chunk.js",
+    "static/js/2.bf503677.chunk.js.map": "/re-joy-web/static/js/2.bf503677.chunk.js.map",
     "index.html": "/re-joy-web/index.html",
-    "precache-manifest.cd97412f512a63ae29365725d8505677.js": "/re-joy-web/precache-manifest.cd97412f512a63ae29365725d8505677.js",
+    "precache-manifest.54eb8983e2b9416dd0da261fdfb4850d.js": "/re-joy-web/precache-manifest.54eb8983e2b9416dd0da261fdfb4850d.js",
     "service-worker.js": "/re-joy-web/service-worker.js",
     "static/css/2.629de7df.chunk.css.map": "/re-joy-web/static/css/2.629de7df.chunk.css.map",
-    "static/css/main.73bddedd.chunk.css.map": "/re-joy-web/static/css/main.73bddedd.chunk.css.map",
-    "static/js/2.472ad040.chunk.js.LICENSE.txt": "/re-joy-web/static/js/2.472ad040.chunk.js.LICENSE.txt",
+    "static/css/main.9b936d61.chunk.css.map": "/re-joy-web/static/css/main.9b936d61.chunk.css.map",
+    "static/js/2.bf503677.chunk.js.LICENSE.txt": "/re-joy-web/static/js/2.bf503677.chunk.js.LICENSE.txt",
     "static/media/slick-theme.css": "/re-joy-web/static/media/slick.f97e3bbf.svg",
     "static/media/star_icon.png": "/re-joy-web/static/media/star_icon.45dd5470.png"
   },
   "entrypoints": [
     "static/js/runtime-main.0ad43781.js",
     "static/css/2.629de7df.chunk.css",
-    "static/js/2.472ad040.chunk.js",
-    "static/css/main.73bddedd.chunk.css",
-    "static/js/main.e26b0de2.chunk.js"
+    "static/js/2.bf503677.chunk.js",
+    "static/css/main.9b936d61.chunk.css",
+    "static/js/main.f5554750.chunk.js"
   ]
 }
