@@ -1,0 +1,6 @@
+._header {height: 150px; text-align: center; line-height: 150px;}
+.join_content {width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+.join_content .join_input input {float: left; margin:5px; padding: 2px 8px 1px 15px; width: 500px; height: 40px; 
+    border-radius: 10px; border: 2px solid #D1B2FF; font-size: 15px;}
+.join_content .join_input .join_button {float: left; width: 525px; height: 45px; margin-top: 8px; padding: 2px 8px 1px 15px; background-color: #D1B2FF; font-weight: bold;}
+.join_content .join_input .join_button:active {background-color: #A566FF; border-color:#A566FF;}
