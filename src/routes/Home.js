@@ -64,14 +64,21 @@ class Home extends React.Component {
                                             state: {
 
                                             }
-                                        }}><li className="login">Login</li>
+                                        }}><li className="login">로그인</li>
+                                        </Link>
+                                        <Link to={{
+                                            pathname: "/Join",
+                                            state: {
+
+                                            }
+                                        }}><li className="join">회원가입</li>
                                         </Link>
                                         <Link to={{
                                             pathname: "/Mypage",
                                             state: {
 
                                             }
-                                        }}><li className="mypage">Mypage</li>
+                                        }}><li className="mypage">마이페이지</li>
                                         </Link>
                                     </ul>
                                 </div>
@@ -115,7 +122,7 @@ class Home extends React.Component {
                         {/* 메뉴 */}
                         <div className="menu">
                             <div className="container">
-                                 <h2>menu</h2>
+                                 <h2 className="ir_su">menu</h2>
                              </div>
                          </div>
                         {/* //메뉴 */}
