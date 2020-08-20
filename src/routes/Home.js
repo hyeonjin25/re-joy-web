@@ -55,7 +55,7 @@ class Home extends React.Component {
                     <div id="wrap">
                       <header>
                         <div className="header">
-                        {/* 로그인 */}
+                        {/* 헤더메뉴 */}
                             <div className="header_top">
                                 <div className="container">
                                     <ul>
@@ -83,7 +83,7 @@ class Home extends React.Component {
                                     </ul>
                                 </div>
                             </div>
-                        {/* //로그인 */}
+                        {/* //헤더메뉴 */}
                         {/* 웹 이름 */}
                             <div className="header_center">
                                 <div className="container">
