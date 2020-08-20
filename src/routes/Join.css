@@ -1,13 +1,25 @@
+/* 헤더 */
 .join_header {position: relative; height: 70px; line-height: 70px;}
-.join_header h1 {margin-left: 110px;}
+.join_header h1 {margin-left: 110px; color:white; text-decoration: none;}
+.join_header h1:hover h1:active h1:focus,h1:visited, h1:link {text-decoration: none;}
 .join_header .join_header_top {height: 40px;}
 .join_header .join_header_top .join_container {margin:0 auto; border-bottom: 1px solid #D1B2FF; width: 1150px;}
 .join_header .join_header_top ul {overflow: hidden; position: absolute; top: 13px; right: 80px; font-size: 14px;}
 .join_header .join_header_top li {float: left; margin-right: 10px; margin-left:10px; color:#fff;}
 .join_header .join_header_top li:hover {text-decoration: underline;}
-.join_content {width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top:20px;}
-.join_content .join_input h2 {margin:10px;}
+
+/* 컨텐츠 - 입력 */
+.join_content {width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top:10px;}
+.join_content .join_input h2 {margin:5px 10px;}
 .join_content .join_input input {float: left; margin:5px; padding: 2px 8px 1px 15px; width: 500px; height: 40px; 
-    border-radius: 10px; border: 2px solid #D1B2FF; font-size: 15px;}
-.join_content .join_input .join_button {float: left; width: 525px; height: 45px; margin-top: 8px; padding: 2px 8px 1px 15px; background-color: #D1B2FF; font-weight: bold;}
+    border-radius: 10px; border: 2px solid #D1B2FF; font-size: 15px; background-color: rgb(60,60,60); color:white;}
+.join_content .join_input .female_radio {height: 40px; display:inline-block; margin-right:50px;}
+.join_content .join_input .female_radio input {width: 30px; height: 30px;}
+.join_content .join_input .female_radio label {line-height: 40px;}
+.join_content .join_input .male_radio {height: 40px; display:inline-block}
+.join_content .join_input .male_radio input {width: 30px; height: 30px;}
+.join_content .join_input .male_radio label {line-height: 40px;}
+.join_content .join_input .jender_input {padding:0; width: 40px;}
+.join_content .join_input .join_button {float: left; width: 525px; height: 45px; margin-top: 8px; padding: 2px 8px 1px 15px; background-color: #D1B2FF; 
+    font-weight: 900; font-size:18px;}
 .join_content .join_input .join_button:active {background-color: #A566FF; border-color:#A566FF;}
