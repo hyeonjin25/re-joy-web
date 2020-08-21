@@ -59,38 +59,6 @@ const Join = () => {
         >
           <h1>re-joy</h1>
         </Link>
-        {/* 헤더메뉴 */}
-        <div className="join_header_top">
-          <div className="join_container">
-            <ul>
-              <Link
-                to={{
-                  pathname: "/Login",
-                  state: {},
-                }}
-              >
-                <li className="login">로그인</li>
-              </Link>
-              <Link
-                to={{
-                  pathname: "/Join",
-                  state: {},
-                }}
-              >
-                <li className="join">회원가입</li>
-              </Link>
-              <Link
-                to={{
-                  pathname: "/Mypage",
-                  state: {},
-                }}
-              >
-                <li className="mypage">마이페이지</li>
-              </Link>
-            </ul>
-          </div>
-        </div>
-        {/* //헤더메뉴 */}
       </header>
       {/* //헤더 */}
       {/* 컨텐츠 */}

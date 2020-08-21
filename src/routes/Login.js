@@ -31,48 +31,17 @@ const Login = () => {
         >
           <h1>re-joy</h1>
         </Link>
-        {/* 헤더메뉴 */}
-        <div className="join_header_top">
-          <div className="join_container">
-            <ul>
-              <Link
-                to={{
-                  pathname: "/Login",
-                  state: {},
-                }}
-              >
-                <li className="login">로그인</li>
-              </Link>
-              <Link
-                to={{
-                  pathname: "/Join",
-                  state: {},
-                }}
-              >
-                <li className="join">회원가입</li>
-              </Link>
-              <Link
-                to={{
-                  pathname: "/Mypage",
-                  state: {},
-                }}
-              >
-                <li className="mypage">마이페이지</li>
-              </Link>
-            </ul>
-          </div>
-        </div>
-        {/* //헤더메뉴 */}
       </header>
       {/* //헤더 */}
       {/* 컨텐츠 */}
-      <div className="join_content">
+      <div className="join_content" style={{ marginTop: 50 }}>
         {/* 로그인 입력 */}
         <div className="join_input">
-          <h2>로그인</h2>
+          <h2 style={{ marginBottom: 20 }}>로그인</h2>
           <form onSubmit={onSubmit}>
             <div>
               <input
+                style={{marginBottom: 10, height:50}}
                 type="text"
                 placeholder="아이디"
                 value={id}
@@ -82,6 +51,7 @@ const Login = () => {
             </div>
             <div>
               <input
+                style={{ marginBottom: 20, height:50}}
                 type="password"
                 placeholder="비밀번호"
                 value={pw}
@@ -90,13 +60,31 @@ const Login = () => {
               />
             </div>
             <div>
-              <input type="submit" value="로그인" />
+              <input type="submit" value="로그인" style={{height:50}}/>
             </div>
           </form>
         </div>
         {/* //로그인 입력 */}
       </div>
       {/* 컨텐츠 */}
+      {/* 푸터 */}
+      <footer>
+        <div id="move_join">
+          <ul>
+            <Link
+              to={{
+                pathname: "/Join",
+                state: {},
+              }}
+            >
+              <li>회원가입</li>
+            </Link>
+            <li>아이디찾기</li>
+            <li>비밀번호찾기</li>
+          </ul>
+        </div>
+      </footer>
+      {/* //푸터 */}
     </div>
   );
 };

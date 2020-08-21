@@ -1,6 +1,6 @@
 /* 헤더 */
-.join_header {position: relative; height: 70px; line-height: 70px;}
-.join_header h1 {margin-left: 110px; color:white; text-decoration: none;}
+.join_header {position: relative; height: 100px; line-height: 100px;}
+.join_header h1 {text-align:center; color:white; text-decoration: none;}
 .join_header h1:hover h1:active h1:focus,h1:visited, h1:link {text-decoration: none;}
 .join_header .join_header_top {height: 40px;}
 .join_header .join_header_top .join_container {margin:0 auto; border-bottom: 1px solid #D1B2FF; width: 1150px;}
@@ -9,7 +9,7 @@
 .join_header .join_header_top li:hover {text-decoration: underline;}
 
 /* 컨텐츠 - 입력 */
-.join_content {width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top:10px;}
+.join_content {width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;}
 .join_content .join_input h2 {margin:10px;}
 .join_content .join_input input {float: left; margin:5px; padding: 2px 8px 1px 15px; width: 500px; height: 40px; 
     border-radius: 10px; border: 2px solid #D1B2FF; font-size: 15px; background-color: rgb(60,60,60); color:white;}
@@ -22,5 +22,13 @@
 .join_content .join_input .female_radio label {line-height: 40px;}
 .join_content .join_input .jender_input {padding:0; width: 40px;}
 .join_content .join_input input[type="submit"] {float: left; width: 525px; height: 45px; margin-top: 8px; padding: 2px 8px 1px 15px; background-color: #D1B2FF; 
-    font-weight: 900; font-size:18px;}
+    font-weight: 900; font-size:18px; margin-bottom: 20px;}
 .join_content .join_input .join_button:active {background-color: #A566FF; border-color:#A566FF;}
+
+/* 회원가입으로 이동 */
+footer {text-align: center;}
+#move_join ul {font-size: 16px; text-align: center;}
+#move_join li {position: relative; display: inline; padding: 0 15px 0 15px; color:#fff;}
+#move_join li:before {content:""; width: 1px; height: 16px; background-color:#fff; position: absolute; left: 0; top: 2px;}
+#move_join li:first-child {margin-left: 30px;}
+#move_join li:first-child:before {width: 0; height: 0;}
