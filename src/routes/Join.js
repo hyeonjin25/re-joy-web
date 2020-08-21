@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import "../components/reset.css";
 import "./Join.css";
@@ -15,17 +16,24 @@ const Join = () => {
     female: false,
   });
 
-  const onSubmit = (e) => {
-    console.log({
-      id,
-      pw,
-      pw_check,
-      name,
-      birth,
-      email,
-      gender,
-    });
-  };
+  const serverUrl = "localhost:9000/Join_process";
+
+  const onSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      // console.log({
+      //   id,
+      //   pw,
+      //   pw_check,
+      //   name,
+      //   birth,
+      //   email,
+      //   gender,
+      // });
+      axios.post(serverUrl, { id, pw, pw_check, name, birth, email, gender});
+    },
+    [id, pw, pw_check, name, birth, email, gender]
+  );
   const onChangeId = (e) => {
     setId(e.target.value);
   };
