@@ -178,7 +178,7 @@ const Join = () => {
               />
             </div>
             <div>
-              <input type="submit" className="join_button" value="가입하기" />
+              <input type="submit" value="가입하기" />
             </div>
           </form>
         </div>
