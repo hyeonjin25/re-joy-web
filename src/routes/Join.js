@@ -18,19 +18,21 @@ const Join = () => {
 
   const serverUrl = "localhost:9000/Join_process";
 
+  const fetchData = async () => {
+    await axios
+      .post(serverUrl, { id, pw, pw_check, name, birth, email, gender })
+      .then((respond) => {
+        console.log(respond);
+      })
+      .catch((error) => {
+        console.log("error :", error.responds);
+      });
+  };
+
   const onSubmit = useCallback(
     (e) => {
       e.preventDefault();
-      // console.log({
-      //   id,
-      //   pw,
-      //   pw_check,
-      //   name,
-      //   birth,
-      //   email,
-      //   gender,
-      // });
-      axios.post(serverUrl, { id, pw, pw_check, name, birth, email, gender});
+      fetchData();
     },
     [id, pw, pw_check, name, birth, email, gender]
   );
