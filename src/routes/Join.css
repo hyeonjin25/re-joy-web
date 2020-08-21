@@ -10,13 +10,14 @@
 
 /* 컨텐츠 - 입력 */
 .join_content {width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top:10px;}
-.join_content .join_input h2 {margin:5px 10px;}
+.join_content .join_input h2 {margin:10px;}
 .join_content .join_input input {float: left; margin:5px; padding: 2px 8px 1px 15px; width: 500px; height: 40px; 
     border-radius: 10px; border: 2px solid #D1B2FF; font-size: 15px; background-color: rgb(60,60,60); color:white;}
-.join_content .join_input .female_radio {height: 40px; display:inline-block; margin-right:50px;}
+.join_content .join_input .input_name {width:250px}
+.join_content .join_input .female_radio {padding: 8px 8px 1px 15px; height: 40px; display:inline-block; margin-right:10px;}
 .join_content .join_input .female_radio input {width: 30px; height: 30px;}
 .join_content .join_input .female_radio label {line-height: 40px;}
-.join_content .join_input .male_radio {height: 40px; display:inline-block}
+.join_content .join_input .male_radio {padding: 8px 8px 1px 15px; height: 40px; display:inline-block}
 .join_content .join_input .male_radio input {width: 30px; height: 30px;}
 .join_content .join_input .male_radio label {line-height: 40px;}
 .join_content .join_input .jender_input {padding:0; width: 40px;}
