@@ -10,7 +10,7 @@ const Join = () => {
   const [name, setName] = useState("");
   const [birth, setBirth] = useState("");
   const [email, setEmail] = useState("");
-  const [jender, setJender] = useState({
+  const [gender, setGender] = useState({
     male: true,
     female: false,
   });
@@ -23,7 +23,7 @@ const Join = () => {
       name,
       birth,
       email,
-      jender,
+      gender,
     });
   };
   const onChangeId = (e) => {
@@ -44,8 +44,8 @@ const Join = () => {
   const onChangeEmail = (e) => {
     setEmail(e.target.value);
   };
-  const onChangeJender = (e) => {
-    setJender(e.target.value);
+  const onChangeGender = (e) => {
+    setGender(e.target.value);
   };
   return (
     <div className="join_wrap">
@@ -112,7 +112,7 @@ const Join = () => {
                   value="male"
                   id="male"
                   checked
-                  onChange={onChangeJender}
+                  onChange={onChangeGender}
                 />
                 <label htmlFor="male">남자</label>
               </div>
@@ -122,7 +122,7 @@ const Join = () => {
                   name="성별"
                   value="female"
                   id="female"
-                  onChange={onChangeJender}
+                  onChange={onChangeGender}
                 />
                 <label htmlFor="female">여자</label>
               </div>

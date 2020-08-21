@@ -28,7 +28,7 @@
 /* 회원가입으로 이동 */
 footer {text-align: center;}
 #move_join ul {font-size: 16px; text-align: center;}
-#move_join li {position: relative; display: inline; padding: 0 15px 0 15px; color:#fff;}
+#move_join li {position: relative; display: inline; padding: 0 20px 0 20px; color:#fff;}
 #move_join li:before {content:""; width: 1px; height: 16px; background-color:#fff; position: absolute; left: 0; top: 2px;}
-#move_join li:first-child {margin-left: 30px;}
+#move_join li:first-child {margin-left: 40px;}
 #move_join li:first-child:before {width: 0; height: 0;}
