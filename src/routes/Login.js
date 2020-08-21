@@ -6,12 +6,26 @@ const Login = () => {
   const [id, setId] = useState("");
   const [pw, setpw] = useState("");
 
-  const onSubmit = (e) => {
-    console.log({
-      id,
-      pw,
-    });
+  const serverUrl = "localhost:9000/Join_process";
+
+  const fetchData = async () => {
+    await axios
+      .post(serverUrl, { id, pw })
+      .then((respond) => {
+        console.log(respond);
+      })
+      .catch((error) => {
+        console.log("error :", error.responds);
+      });
   };
+
+  const onSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      fetchData();
+    },
+    [id, pw]
+  );
   const onChangeId = (e) => {
     setId(e.target.value);
   };
