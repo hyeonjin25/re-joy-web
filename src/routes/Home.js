@@ -109,17 +109,6 @@ class Home extends React.Component {
                     </div>
                   </div>
                   {/* //웹 이름 */}
-                  {/* 링크 */}
-                  <div className="linker">
-                    <div className="container">
-                      {/* <ul>
-                                        <li><a href="https://www.netflix.com/browse" target="_blank">Netflix</a></li>
-                                        <li><a href="https://play.watcha.net/" target="_blank">Watcha</a></li>
-                                        <li><a href="https://www.wavve.com/" target="_blank">Wave</a></li>
-                                    </ul> */}
-                    </div>
-                  </div>
-                  {/* //링크 */}
                 </div>
               </header>
 
@@ -151,7 +140,7 @@ class Home extends React.Component {
                 {/* //메뉴 */}
               </nav>
 
-              <div id="content">
+              <main>
                 {/* 추천 */}
                 <div className="recommend">
                   <div className="container">
@@ -206,7 +195,7 @@ class Home extends React.Component {
                   </div>
                 </div>
                 {/* //분류 */}
-              </div>
+              </main>
               <footer>
                 <div className="footer">
                   <div className="container">

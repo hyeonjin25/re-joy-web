@@ -32,6 +32,7 @@ const Join = () => {
   const onSubmit = useCallback(
     (e) => {
       e.preventDefault();
+      console.log(id, pw, pw_check, name, birth, email, gender);
       fetchData();
     },
     [id, pw, pw_check, name, birth, email, gender]
@@ -72,7 +73,7 @@ const Join = () => {
       </header>
       {/* //헤더 */}
       {/* 컨텐츠 */}
-      <div className="join_content">
+      <main className="join_main">
         {/* 회원가입 입력 */}
         <div className="join_input">
           <h2>회원가입</h2>
@@ -161,7 +162,7 @@ const Join = () => {
           </form>
         </div>
         {/* //회원가입 입력 */}
-      </div>
+      </main>
       {/* 컨텐츠 */}
     </div>
   );

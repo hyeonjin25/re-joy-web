@@ -23,6 +23,7 @@ const Login = () => {
   const onSubmit = useCallback(
     (e) => {
       e.preventDefault();
+      console.log(id, pw);
       fetchData();
     },
     [id, pw]
@@ -49,7 +50,7 @@ const Login = () => {
       </header>
       {/* //헤더 */}
       {/* 컨텐츠 */}
-      <div className="join_content" style={{ marginTop: 50 }}>
+      <main className="join_main" style={{ marginTop: 50 }}>
         {/* 로그인 입력 */}
         <div className="join_input">
           <h2 style={{ marginBottom: 20 }}>로그인</h2>
@@ -80,7 +81,7 @@ const Login = () => {
           </form>
         </div>
         {/* //로그인 입력 */}
-      </div>
+      </main>
       {/* 컨텐츠 */}
       {/* 푸터 */}
       <footer>
