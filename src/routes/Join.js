@@ -10,7 +10,10 @@ const Join = () => {
   const [name, setName] = useState("");
   const [birth, setBirth] = useState("");
   const [email, setEmail] = useState("");
-  const [jender, setJender] = useState({ female: true, male: false });
+  const [jender, setJender] = useState({
+    male: true,
+    female: false,
+  });
 
   const onSubmit = (e) => {
     console.log({
@@ -33,18 +36,16 @@ const Join = () => {
     setPw_check(e.target.value);
   };
   const onChangeName = (e) => {
-      setName(e.target.value);
+    setName(e.target.value);
   };
   const onChangeBirth = (e) => {
-      setBirth(e.target.value);
+    setBirth(e.target.value);
   };
   const onChangeEmail = (e) => {
-      setEmail(e.target.value);
+    setEmail(e.target.value);
   };
   const onChangeJender = (e) => {
-    let obj = {};
-    obj[e.target.value] = e.target.checked;
-    setJender(obj);
+    setJender(e.target.value);
   };
   return (
     <div className="join_wrap">
@@ -136,27 +137,26 @@ const Join = () => {
               />
             </div>
             <div>
-              <div className="female_radio">
-                <input
-                  type="radio"
-                  name="성별"
-                  value="female"
-                  id="female"
-                  // checked={jender["female"]}
-                  // onChange={onChangeJender}
-                />
-                <label htmlFor="female">여자</label>
-              </div>
               <div className="male_radio">
                 <input
                   type="radio"
                   name="성별"
                   value="male"
                   id="male"
-                  // checked={jender["male"]}
-                  // onChange={onChangeJender}
+                  checked
+                  onChange={onChangeJender}
                 />
                 <label htmlFor="male">남자</label>
+              </div>
+              <div className="female_radio">
+                <input
+                  type="radio"
+                  name="성별"
+                  value="female"
+                  id="female"
+                  onChange={onChangeJender}
+                />
+                <label htmlFor="female">여자</label>
               </div>
             </div>
             <div>

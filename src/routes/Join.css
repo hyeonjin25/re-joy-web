@@ -14,12 +14,12 @@
 .join_content .join_input input {float: left; margin:5px; padding: 2px 8px 1px 15px; width: 500px; height: 40px; 
     border-radius: 10px; border: 2px solid #D1B2FF; font-size: 15px; background-color: rgb(60,60,60); color:white;}
 .join_content .join_input .input_name {width:250px}
-.join_content .join_input .female_radio {padding: 8px 8px 1px 15px; height: 40px; display:inline-block; margin-right:10px;}
-.join_content .join_input .female_radio input {width: 30px; height: 30px;}
-.join_content .join_input .female_radio label {line-height: 40px;}
 .join_content .join_input .male_radio {padding: 8px 8px 1px 15px; height: 40px; display:inline-block}
 .join_content .join_input .male_radio input {width: 30px; height: 30px;}
 .join_content .join_input .male_radio label {line-height: 40px;}
+.join_content .join_input .female_radio {padding: 8px 8px 1px 15px; height: 40px; display:inline-block; margin-right:10px;}
+.join_content .join_input .female_radio input {width: 30px; height: 30px;}
+.join_content .join_input .female_radio label {line-height: 40px;}
 .join_content .join_input .jender_input {padding:0; width: 40px;}
 .join_content .join_input input[type="submit"] {float: left; width: 525px; height: 45px; margin-top: 8px; padding: 2px 8px 1px 15px; background-color: #D1B2FF; 
     font-weight: 900; font-size:18px;}
