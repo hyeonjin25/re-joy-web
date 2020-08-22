@@ -31,11 +31,31 @@ class Search extends React.Component {
   };
 
   componentDidMount() {
+    const { location, history } = this.props;
+    //검색을 통해 페이지로 들어온게 아닌경우 강제로 홈으로 이동시킴(state가 undefined일 떄)
+    if (location.state === undefined) {
+      history.push("/");
+    }
+    this.setState({query: history.location.state})
     this.getSearchRes();
   }
 
+  //검색 버튼 누를 시(onClick)
+  onSearch_click = async () => {
+    const { location, history } = this.props;
+    history.push({
+      pathname: "/Search/" + this.state.query,
+      state: this.state.query,
+    });
+  };
+
+  //검색창에 데이터 입력시(onChange)
+  onSearch = (e) => {
+    this.setState({ query: e.target.value });
+  };
+
   render() {
-    const { query_results, isLoding } = this.state;
+    const { query, query_results, isLoding } = this.state;
     return (
       <div>
         {isLoding ? (
@@ -129,6 +149,7 @@ class Search extends React.Component {
                       <div>
                         <h3 className="ir_su">search results</h3>
                         <div className="movies">
+                         {/* 검색결과 배열 불러오기 */}
                           {query_results.map((response) => (
                             <SearchRes
                               key={response.id}

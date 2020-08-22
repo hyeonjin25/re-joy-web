@@ -13,7 +13,7 @@ function App() {
       <Route path="/Mypage" component={Mypage} />
       <Route path="/Join" component={Join} />
       <Route path="/Login" component={Login} />
-      <Route path="/Search" component={Search} />
+      <Route path="/Search/:query" component={Search} />
     </HashRouter>
   );
 }

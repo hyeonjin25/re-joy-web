@@ -43,13 +43,15 @@ class Home extends React.Component {
     this.getTvshows();
   }
 
+  //검색 버튼 누를 시(onClick)
   onSearch_click = async () => {
     this.props.history.push({
-      pathname: "/Search",
+      pathname: "/Search/" + this.state.query,
       state: this.state.query,
     });
   };
 
+  //검색창에 데이터 입력시(onChange)
   onSearch = (e) => {
     this.setState({ query: e.target.value });
   };

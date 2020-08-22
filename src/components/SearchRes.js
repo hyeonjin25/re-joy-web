@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function SearchRes({ id, title, poster, summary, genres, date, rating }) {
   return (
-    <div className="tvshow">
+      <div className="tvshow">
       <img
         className="poster"
         src={"https://image.tmdb.org/t/p/w500" + poster}
