@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import $ from "jquery";
 import { Link } from "react-router-dom";
 import Movie from "../components/Movie";
 import Tvshow from "../components/Tvshow";
@@ -15,23 +16,27 @@ class Home extends React.Component {
     t_isLoding: true,
     movies: [],
     tvshows: [],
+    query: "",
+    query_results: "",
   };
 
   getMovies = async () => {
+    const movieUrl =
+      "https://api.themoviedb.org/3/movie/now_playing?api_key=9aa38313510a50c3ae30091b52efcc90&language=ko&page=1®ion=KR";
+
     const {
       data: { results },
-    } = await axios.get(
-      "https://api.themoviedb.org/3/movie/now_playing?api_key=9aa38313510a50c3ae30091b52efcc90&language=ko&page=1®ion=KR"
-    );
+    } = await axios.get(movieUrl);
     this.setState({ movies: results, m_isLoding: false });
   };
 
   getTvshows = async () => {
+    const tvshowUrl =
+      "https://api.themoviedb.org/3/tv/on_the_air?api_key=9aa38313510a50c3ae30091b52efcc90&language=ko&page=1";
+
     const {
       data: { results },
-    } = await axios.get(
-      "https://api.themoviedb.org/3/tv/on_the_air?api_key=9aa38313510a50c3ae30091b52efcc90&language=ko&page=1"
-    );
+    } = await axios.get(tvshowUrl);
     this.setState({ tvshows: results, t_isLoding: false });
   };
 
@@ -39,6 +44,24 @@ class Home extends React.Component {
     this.getMovies();
     this.getTvshows();
   }
+
+  onSearch_click = async () => {
+    const serchUrl =
+      "https://api.themoviedb.org/3/search/multi?api_key=9aa38313510a50c3ae30091b52efcc90&query="+this.state.query+"&page=1&include_adult=false"
+    await axios
+      .get(serchUrl)
+      .then((response) => {
+        this.setState({ query_results: response.data.results });
+        console.log(this.state.query_results);
+      })
+      .catch((errer) => {
+        console.log("errer: ", errer.message);
+      });
+  };
+
+  onSearch = (e) => {
+    this.setState({ query: e.target.value });
+  };
 
   render() {
     const { m_isLoding, t_isLoding, movies, tvshows } = this.state;
@@ -50,6 +73,7 @@ class Home extends React.Component {
       slidesToScroll: 4,
       autoplay: false,
     };
+
     return (
       <section className="cont">
         {m_isLoding && t_isLoding ? (
@@ -120,11 +144,13 @@ class Home extends React.Component {
                     <form className="search_cont">
                       <input
                         type="text"
+                        value={this.state.query}
+                        onChange={this.onSearch}
                         id="input_search"
                         placeholder="search"
                         maxLength="50"
                       />
-                      <button>
+                      <button type="submit" onClick={this.onSearch_click}>
                         <span className="search_button"></span>
                       </button>
                     </form>
