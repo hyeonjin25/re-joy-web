@@ -16,16 +16,16 @@ const Join = () => {
     female: false,
   });
 
-  const serverUrl = "localhost:9000/Join_process";
-
+  
   const fetchData = async () => {
+    const serverUrl = "localhost:9000/Join_process";
     await axios
       .post(serverUrl, { id, pw, pw_check, name, birth, email, gender })
-      .then((respond) => {
-        console.log(respond);
+      .then((response) => {
+        console.log(response);
       })
       .catch((error) => {
-        console.log("error :", error.responds);
+        console.log("error :", error.message);
       });
   };
 
