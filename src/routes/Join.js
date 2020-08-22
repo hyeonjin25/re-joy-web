@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../components/reset.css";
@@ -16,7 +16,6 @@ const Join = () => {
     female: false,
   });
 
-  
   const fetchData = async () => {
     const serverUrl = "localhost:9000/Join_process";
     await axios
@@ -29,14 +28,11 @@ const Join = () => {
       });
   };
 
-  const onSubmit = useCallback(
-    (e) => {
-      e.preventDefault();
-      console.log(id, pw, pw_check, name, birth, email, gender);
-      fetchData();
-    },
-    [id, pw, pw_check, name, birth, email, gender]
-  );
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log(id, pw, pw_check, name, birth, email, gender);
+    fetchData();
+  };
   const onChangeId = (e) => {
     setId(e.target.value);
   };

@@ -1,4 +1,4 @@
-import React, { useState ,useCallback } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../components/reset.css";
@@ -20,14 +20,11 @@ const Login = () => {
       });
   };
 
-  const onSubmit = useCallback(
-    (e) => {
-      e.preventDefault();
-      console.log(id, pw);
-      fetchData();
-    },
-    [id, pw]
-  );
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log(id, pw);
+    fetchData();
+  };
   const onChangeId = (e) => {
     setId(e.target.value);
   };
@@ -57,7 +54,7 @@ const Login = () => {
           <form onSubmit={onSubmit}>
             <div>
               <input
-                style={{marginBottom: 10, height:50}}
+                style={{ marginBottom: 10, height: 50 }}
                 type="text"
                 placeholder="아이디"
                 value={id}
@@ -67,7 +64,7 @@ const Login = () => {
             </div>
             <div>
               <input
-                style={{ marginBottom: 20, height:50}}
+                style={{ marginBottom: 20, height: 50 }}
                 type="password"
                 placeholder="비밀번호"
                 value={pw}
@@ -76,7 +73,7 @@ const Login = () => {
               />
             </div>
             <div>
-              <input type="submit" value="로그인" style={{height:50}}/>
+              <input type="submit" value="로그인" style={{ height: 50 }} />
             </div>
           </form>
         </div>
