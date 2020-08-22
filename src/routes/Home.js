@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import $ from "jquery";
 import { Link } from "react-router-dom";
 import Movie from "../components/Movie";
 import Tvshow from "../components/Tvshow";
@@ -17,7 +16,6 @@ class Home extends React.Component {
     movies: [],
     tvshows: [],
     query: "",
-    query_results: "",
   };
 
   getMovies = async () => {
@@ -46,17 +44,10 @@ class Home extends React.Component {
   }
 
   onSearch_click = async () => {
-    const serchUrl =
-      "https://api.themoviedb.org/3/search/multi?api_key=9aa38313510a50c3ae30091b52efcc90&query="+this.state.query+"&page=1&include_adult=false"
-    await axios
-      .get(serchUrl)
-      .then((response) => {
-        this.setState({ query_results: response.data.results });
-        console.log(this.state.query_results);
-      })
-      .catch((errer) => {
-        console.log("errer: ", errer.message);
-      });
+    this.props.history.push({
+      pathname: "/Search",
+      state: this.state.query,
+    });
   };
 
   onSearch = (e) => {
