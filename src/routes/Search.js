@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import SearchRes from "../components/SearchRes";
+import "../components/reset.css";
+import "./Home.css";
 
 class Search extends React.Component {
   state = {

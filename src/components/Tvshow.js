@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./reset.css";
+import "./Movie.css";
 
 function Tvshow({ id, title, poster, summary, genres, date, rating }) {
   return (
