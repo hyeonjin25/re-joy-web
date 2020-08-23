@@ -36,7 +36,7 @@ class Search extends React.Component {
     if (location.state === undefined) {
       history.push("/");
     }
-    this.setState({query: history.location.state})
+    this.setState({ query: history.location.state });
     this.getSearchRes();
   }
 
@@ -146,10 +146,10 @@ class Search extends React.Component {
                 <div className="recommend">
                   <div className="container">
                     <section>
-                      <div>
+                      <div style={{padding:37, paddingTop:10}}>
                         <h3 className="ir_su">search results</h3>
-                        <div className="movies">
-                         {/* 검색결과 배열 불러오기 */}
+                        <div style={{ display: "flex", flexWrap: "wrap" }}>
+                          {/* 검색결과 배열 불러오기 */}
                           {query_results.map((response) => (
                             <SearchRes
                               key={response.id}

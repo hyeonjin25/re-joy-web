@@ -5,7 +5,7 @@ import "./Movie.css";
 
 function Movie({ id, title, poster, summary, genres, date, rating }) {
   return (
-    <div className="space_between">
+    <div className="space_around">
       <div className="movie">
         <img
           className="poster"
@@ -15,8 +15,7 @@ function Movie({ id, title, poster, summary, genres, date, rating }) {
         />
         <div className="movie_data">
           <h3 className="movie_title">
-            {title.slice(0, 15)}
-            {title.length > 15 ? "..." : ""}
+            {title}
           </h3>
           <div className="movie_rating">
             <img
