@@ -5,6 +5,7 @@ import Join from "./routes/Join";
 import Mypage from "./routes/Mypage";
 import Login from "./routes/Login";
 import Search from "./routes/Search";
+import Detail from "./routes/Detail";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/Join" component={Join} />
       <Route path="/Login" component={Login} />
       <Route path="/Search/:query" component={Search} />
+      <Route path="/:title" component={Detail} />
     </HashRouter>
   );
 }

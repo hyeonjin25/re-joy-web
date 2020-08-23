@@ -44,7 +44,7 @@ class Search extends React.Component {
 
   //검색 버튼 누를 시(onClick)
   onSearch_click = async () => {
-    const { location, history } = this.props;
+    const { history } = this.props;
     history.push({
       pathname: "/Search/" + this.state.query,
       state: this.state.query,
