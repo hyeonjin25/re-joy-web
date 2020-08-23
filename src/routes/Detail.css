@@ -1,0 +1,6 @@
+#de_main {display:flex; justify-content: center; flex-wrap: wrap;}
+.detail {width: 1000px; display:flex; justify-content: space-around; flex-wrap: wrap;}
+.detail .poster {width: 350px; height: 520px; padding-bottom:0;}
+.detail .movie_data_wrap{width: 600px; height: 600px; display: inline-block; position: relative;}
+.detail .movie_data {position: absolute; top:0; padding:20px 50px; width: auto;}
+.detail .movie_data .movie_title{font-size: 50px;}

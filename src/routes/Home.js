@@ -26,6 +26,7 @@ class Home extends React.Component {
       data: { results },
     } = await axios.get(movieUrl);
     this.setState({ movies: results, m_isLoding: false });
+    console.log(results)
   };
 
   getTvshows = async () => {
