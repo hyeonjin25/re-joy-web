@@ -1,29 +1,39 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./reset.css";
-import "./Tvshow.css";
 
 function Tvshow({ id, title, poster, summary, genres, date, rating }) {
   return (
-    <div className="tvshow">
-      <img
-        className="poster"
-        src={"https://image.tmdb.org/t/p/w500" + poster}
-        alt={title}
-        title={title}
-      />
-      <div className="tvshow_data">
-        <h3 className="tvshow_title">
-          {title.slice(0, 15)}
-          {title.length > 15 ? "..." : ""}
-        </h3>
-        <div className="tvshow_rating">
-          <img
-            className="star_icon"
-            src={require("../img/star_icon.png")}
-            alt="rating"
-          />
-          <h5 className="rating_text">{rating}</h5>
+    <div className="space_between">
+      <div className="movie">
+        <img
+          className="poster"
+          src={"https://image.tmdb.org/t/p/w500" + poster}
+          alt={title}
+          title={title}
+        />
+        <div className="movie_data">
+          <h3 className="movie_title">
+            {title.slice(0, 15)}
+            {title.length > 15 ? "..." : ""}
+          </h3>
+          <div className="movie_rating">
+            <img
+              className="star_icon"
+              src={require("../img/star_icon.png")}
+              alt="rating"
+            />
+            <h5 className="rating_text">{rating}</h5>
+          </div>
+          {/*<h5 className="movie_year">{date}</h5>*/}
+          {/*<ul className="genres">
+                {genres.map((genre, index) => (
+                <li key={index} className="genres_genre">
+                    {genre}
+                </li>
+             ))}
+            </ul>*/}
+          {/* <p className="movie_summary">{summary}</p> */}
         </div>
       </div>
     </div>

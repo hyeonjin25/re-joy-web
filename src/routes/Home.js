@@ -131,7 +131,7 @@ class Home extends React.Component {
 
               <nav>
                 {/* 검색 */}
-                <fieldset className="search">
+                <fieldset id="search">
                   <div className="container">
                     <legend className="ir_su">search</legend>
                     <form className="search_cont">
@@ -150,13 +150,6 @@ class Home extends React.Component {
                   </div>
                 </fieldset>
                 {/* //검색 */}
-                {/* 메뉴 */}
-                <div className="menu">
-                  <div className="container">
-                    <h2 className="ir_su">menu</h2>
-                  </div>
-                </div>
-                {/* //메뉴 */}
               </nav>
 
               <main>

@@ -120,7 +120,7 @@ class Search extends React.Component {
 
               <nav>
                 {/* 검색 */}
-                <fieldset className="search">
+                <fieldset id="search">
                   <div className="container">
                     <legend className="ir_su">search</legend>
                     <form className="search_cont">

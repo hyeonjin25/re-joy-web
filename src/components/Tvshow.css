@@ -1,6 +1,0 @@
-.tvshow {position: relative ; display: inline-block; margin: 10px 0px 10px 13px;}
-.tvshow .poster {width: 230px; height: 343px; padding-bottom: 10px; margin-bottom: 0;}
-.tvshow .tvshow_data .tvshow_title {font-size: 13px;}
-.tvshow .tvshow_data .tvshow_rating {overflow: hidden; position: absolute; bottom: 0px; right: 5px;}
-.tvshow .tvshow_data .star_icon {width: 12px; float: left; margin-right: 4px; margin-top: 2.5px;}
-.tvshow .tvshow_data .rating_text {float: left;}

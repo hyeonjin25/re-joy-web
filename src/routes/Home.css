@@ -16,32 +16,27 @@ header .header_top .container {border-bottom: 1px solid #D1B2FF;}
 header .header_top ul {overflow: hidden; position: absolute; top: 13px; right: 80px; font-size: 14px;}
 header .header_top li {float: left; margin-right: 10px; margin-left:10px; color:#fff;}
 header .header_top li:hover {text-decoration: underline;}
-header .header_center {height: 130px;}
-header .header_center h1{text-align: center; line-height: 130px; color: #fff; font-size: 30px;}
-/* header .linker {height: 30px;}
-header .linker ul {overflow: hidden; position: absolute; bottom: 5px; right: 100px;}
-header .linker li {float: left;}
-header .linker li a {padding-right: 20px;} */
+header .header_center {display:flex; height: 130px;}
+header .header_center .container {display:flex; justify-content: center; align-items: center; height: 130px;}
+header .header_center h1 {color: #fff; font-size: 40px;}
 
 /* 네비게이션 - 검색 */
-nav .search .container {height: 50px; display:flex; justify-content: center; align-items: center;}
-nav .search .search_cont {position: relative;}
-nav .search .search_cont input {width:1080px; height: 40px; padding: 1px 8px 1px 8px; border: 3px solid #D1B2FF; background-color: rgb(60,60,60);
+nav #search {margin-bottom: 30px}
+nav #search .container {height: 50px; display:flex; justify-content: center; align-items: center;}
+nav #search .search_cont {position: relative;}
+nav #search .search_cont input {width:1080px; height: 40px; padding: 1px 8px 1px 8px; border: 3px solid #D1B2FF; background-color: rgb(60,60,60);
     color:#fff; font-size: 15px;}
-nav .search .search_cont button {position: absolute; top: 0; right: 0; width: 48px; height: 100%; margin-left: -1px; border: 3px solid #D1B2FF; 
+nav #search .search_cont button {position: absolute; top: 0; right: 0; width: 48px; height: 100%; margin-left: -1px; border: 3px solid #D1B2FF; 
     background: url(../img/search_icon.png) no-repeat #D1B2FF; background-position: 7px 8px; background-size:25px 25px;}
-nav .search .search_cont button:active {border-color:#A566FF;}
-nav .search .search_cont .search_button {display: inline-block;}
+nav #search .search_cont button:active {border-color:#A566FF;}
+nav #search .search_cont .search_button {display: inline-block;}
 
-/* 네비게이션 - 메뉴 */
-nav .menu {height: 50px;}
-nav .menu .container {border-bottom: 1px solid gray;}
 
 /* 컨텐츠 - 추천 */
 main .recommend .container {background-color: rgba(60,60,60,0.8);}
 main .recommend .container .recommend_sort_title {margin-left: 15px;}
 main .recommend .container .movies {margin:0 auto; width: 1030px; padding-top:20px;}
-main .recommend .container .tvshows {margin:0 auto; width: 1030px; padding-top:50px;}
+main .recommend .container .tvshows {margin:0 auto; width: 1030px; padding-top:50px; padding-bottom:50px;}
 
 /* 컨텐츠 - 분류 */
 main .category {height: 1000px;}
