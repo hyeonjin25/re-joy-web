@@ -156,7 +156,9 @@ class Search extends React.Component {
                             <SearchRes
                               key={response.id}
                               id={response.id}
+                              media_type={response.media_type}
                               title={response.title}
+                              name={response.name}
                               date={response.release_date}
                               summary={response.overview}
                               poster={response.poster_path}
