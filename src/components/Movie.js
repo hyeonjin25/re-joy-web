@@ -4,13 +4,13 @@ import PropTypes from "prop-types";
 import "./reset.css";
 import "./Movie.css";
 
-function Movie({ id, title, poster, summary, genres, date, rating }) {
+function Movie({ id, title, poster, backdrop, summary, genres, adult, date, rating }) {
   return (
     <div className="space_around">
       <Link
         to={{
           pathname: "/" + title,
-          state: { id, title, poster, summary, genres, date, rating },
+          state: { id, title, poster, backdrop, summary, genres, adult, date, rating },
         }}
       >
         <div className="movie">
