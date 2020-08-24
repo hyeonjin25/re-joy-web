@@ -49,7 +49,7 @@ main .category {height: 0;}
 
 /* 푸터 */
 footer .footer {margin-top:20px; height: 60px;}
-footer .footer .container {display: flex; flex-flow: column; justify-content: space-around ; align-items: center;
+footer .footer .container {padding:5px; display: flex; flex-flow: column; justify-content: space-around ; align-items: center;
     border-top: 1px solid #c4aff0}
 footer .footer .container div {font-size:13px;}
 footer .footer .container span {font-size:13px; font-weight: bold;}
