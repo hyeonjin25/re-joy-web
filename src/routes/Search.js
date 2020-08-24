@@ -178,7 +178,12 @@ class Search extends React.Component {
               <footer>
                 <div className="footer">
                   <div className="container">
-                    <h2>푸터</h2>
+                    <h2 className="ir_su">푸터</h2>
+                    <span>re-joy</span>
+                    <div>
+                      소현진&emsp; | &emsp;최유경&emsp; | &emsp;김형호&emsp; |
+                      &emsp;이유일
+                    </div>
                   </div>
                 </div>
               </footer>
