@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/re-joy-web/static/css/main.2f5d1702.chunk.css",
-    "main.js": "/re-joy-web/static/js/main.aacd629e.chunk.js",
-    "main.js.map": "/re-joy-web/static/js/main.aacd629e.chunk.js.map",
+    "main.css": "/re-joy-web/static/css/main.2b49576c.chunk.css",
+    "main.js": "/re-joy-web/static/js/main.20292ceb.chunk.js",
+    "main.js.map": "/re-joy-web/static/js/main.20292ceb.chunk.js.map",
     "runtime-main.js": "/re-joy-web/static/js/runtime-main.0ad43781.js",
     "runtime-main.js.map": "/re-joy-web/static/js/runtime-main.0ad43781.js.map",
     "static/css/2.629de7df.chunk.css": "/re-joy-web/static/css/2.629de7df.chunk.css",
     "static/js/2.bbd8dc9b.chunk.js": "/re-joy-web/static/js/2.bbd8dc9b.chunk.js",
     "static/js/2.bbd8dc9b.chunk.js.map": "/re-joy-web/static/js/2.bbd8dc9b.chunk.js.map",
     "index.html": "/re-joy-web/index.html",
-    "precache-manifest.6b42ac0c16bdd946800f61374d2018a8.js": "/re-joy-web/precache-manifest.6b42ac0c16bdd946800f61374d2018a8.js",
+    "precache-manifest.0e9408954bf08f338617a69dee8b037f.js": "/re-joy-web/precache-manifest.0e9408954bf08f338617a69dee8b037f.js",
     "service-worker.js": "/re-joy-web/service-worker.js",
     "static/css/2.629de7df.chunk.css.map": "/re-joy-web/static/css/2.629de7df.chunk.css.map",
-    "static/css/main.2f5d1702.chunk.css.map": "/re-joy-web/static/css/main.2f5d1702.chunk.css.map",
+    "static/css/main.2b49576c.chunk.css.map": "/re-joy-web/static/css/main.2b49576c.chunk.css.map",
     "static/js/2.bbd8dc9b.chunk.js.LICENSE.txt": "/re-joy-web/static/js/2.bbd8dc9b.chunk.js.LICENSE.txt",
     "static/media/slick-theme.css": "/re-joy-web/static/media/slick.f97e3bbf.svg",
     "static/media/star_icon.png": "/re-joy-web/static/media/star_icon.45dd5470.png"
@@ -21,7 +21,7 @@
     "static/js/runtime-main.0ad43781.js",
     "static/css/2.629de7df.chunk.css",
     "static/js/2.bbd8dc9b.chunk.js",
-    "static/css/main.2f5d1702.chunk.css",
-    "static/js/main.aacd629e.chunk.js"
+    "static/css/main.2b49576c.chunk.css",
+    "static/js/main.20292ceb.chunk.js"
   ]
 }
