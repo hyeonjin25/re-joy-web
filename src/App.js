@@ -15,7 +15,7 @@ function App() {
       <Route path="/Join" component={Join} />
       <Route path="/Login" component={Login} />
       <Route path="/Search/:query" exact={true} component={Search} />
-      <Route path="/:title" exact={true} component={Detail} />
+      <Route path="/Detail/:title" exact={true} component={Detail} />
     </HashRouter>
   );
 }
