@@ -1,6 +1,6 @@
 .space_around {display: flex; justify-content: space-around;}
-.movie {position: relative; margin-top:15px; margin-bottom:10px;}
-.movie .poster {width:230px; height: 343px; padding-bottom: 10px; margin-bottom: 0;}
+.movie {position: relative; margin-top:10px; margin-bottom:10px;}
+.movie .poster {width:230px; height: 343px; margin-bottom: 20px; box-shadow: 10px 10px rgba(0, 0, 0, 0.5);}
 .movie .movie_data {width: 230px;}
 .movie .movie_data .movie_title {color:white; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 80%;}
 .movie .movie_data .movie_rating {overflow: hidden; position: absolute; bottom: 0px; right: 5px;}
