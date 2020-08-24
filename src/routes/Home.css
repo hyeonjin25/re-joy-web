@@ -48,7 +48,8 @@ main .category {height: 0;}
 /* main .category .container {background-color: rgba(50,50,50,0.8);} */
 
 /* 푸터 */
-footer .footer {height: 60px; background-color: #535962;}
-footer .footer .container {display: flex; flex-flow: column; justify-content: space-around ; align-items: center;}
+footer .footer {margin-top:20px; height: 60px;}
+footer .footer .container {display: flex; flex-flow: column; justify-content: space-around ; align-items: center;
+    border-top: 1px solid #c4aff0}
 footer .footer .container div {font-size:13px;}
 footer .footer .container span {font-size:13px; font-weight: bold;}
