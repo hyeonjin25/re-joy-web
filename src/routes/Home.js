@@ -156,20 +156,12 @@ class Home extends React.Component {
               <main>
                 {/* 추천 */}
                 <div className="recommend">
-                  <div className="container" >
+                  <div className="glass"></div>
+                  <div className="glass second_glass"></div>
+                  <div className="container">
                     <section>
                       <div>
                         <h3 className="ir_su">recommend</h3>
-                        <div className="main_movie" style={{backgroundImage:"url(https://image.tmdb.org/t/p/w500" +
-                        this.state.movies[0].backdrop_path +")", backgroundRepeat:"no-repeat", width:1100, height:400, backgroundSize:"1000px 400px"}}>
-                        {/* <img
-                        className="poster"
-                        src={"https://image.tmdb.org/t/p/w500" + this.state.movies[0].poster_path}
-                        alt={this.state.movies[0].title}
-                        title={this.state.movies[0].title}
-                      /> */}
-                      </div>
-                        
                         <div className="movies">
                           <h3 className="recommend_sort_title">추천 영화</h3>
                           <Slick {...slick_settings}>
@@ -215,7 +207,7 @@ class Home extends React.Component {
                 <div className="category">
                   <div className="container">
                     <section>
-                      <h3>분류</h3>
+                      <h3 className="ir_su">분류</h3>
                     </section>
                   </div>
                 </div>
@@ -224,7 +216,12 @@ class Home extends React.Component {
               <footer>
                 <div className="footer">
                   <div className="container">
-                    <h2>푸터</h2>
+                    <h2 className="ir_su">푸터</h2>
+                    <span>re-joy</span>
+                    <div>
+                      소현진&emsp; | &emsp;최유경&emsp; | &emsp;김형호&emsp; |
+                      &emsp;이유일
+                    </div>
                   </div>
                 </div>
               </footer>
