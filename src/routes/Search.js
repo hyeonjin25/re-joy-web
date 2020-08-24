@@ -7,7 +7,7 @@ import "./Home.css";
 
 class Search extends React.Component {
   state = {
-    query: this.props.history.location.state,
+    query: this.props.match.params.query,
     query_results: [],
     isLoding: true,
   };
@@ -33,12 +33,13 @@ class Search extends React.Component {
   };
 
   componentDidMount() {
-    const { location, history } = this.props;
+    const { location, history, match } = this.props;
     //검색을 통해 페이지로 들어온게 아닌경우 강제로 홈으로 이동시킴(state가 undefined일 떄)
     if (location.state === undefined) {
       history.push("/");
     }
-    this.setState({ query: history.location.state });
+    this.setState({ query: match.params.query });
+    console.log("history.location.state");
     this.getSearchRes();
   }
 
