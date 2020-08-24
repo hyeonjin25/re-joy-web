@@ -9,7 +9,7 @@ function Movie({ id, title, poster, backdrop, summary, genres, adult, date, rati
     <div className="space_around">
       <Link
         to={{
-          pathname: "/" + title,
+          pathname: "/Detail/" + title,
           state: { id, title, poster, backdrop, summary, genres, adult, date, rating },
         }}
       >
