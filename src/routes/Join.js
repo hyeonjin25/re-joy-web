@@ -16,23 +16,23 @@ const Join = () => {
     female: false,
   });
 
-  const fetchData = async () => {
-    const serverUrl = "localhost:9000/Join_process";
-    await axios
-      .post(serverUrl, { id, pw, pw_check, name, birth, email, gender })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log("error :", error.message);
-      });
-  };
+  const serverUrl = "localhost:9000/Join_process";
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    console.log(id, pw, pw_check, name, birth, email, gender);
-    fetchData();
-  };
+  const onSubmit = (
+    async (e) => {
+      e.preventDefault();
+      // console.log({id, pw, pw_check, name, birth, email, gender});
+      await axios
+        .post(serverUrl, { id, pw, pw_check, name, birth, email, gender })
+        // .then((response) => {
+        //   console.log(response);
+        // })
+        // .catch((error) => {
+        //   console.log(error);
+        // });
+    }
+  );
+
   const onChangeId = (e) => {
     setId(e.target.value);
   };
