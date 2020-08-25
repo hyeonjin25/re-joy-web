@@ -19,14 +19,14 @@ function SearchRes({ id, title, media_type, name, poster, summary, genres, date,
         title={cont_title}
       />
       <div className="movie_data">
-        <h3 className="movie_title">{cont_title}</h3>
+        <h3 className="movie_title" style={{color:"black"}}>{cont_title}</h3>
         <div className="movie_rating">
           <img
             className="star_icon"
             src={require("../img/star_icon.png")}
             alt="rating"
           />
-          <h5 className="rating_text">{rating}</h5>
+          <h5 className="rating_text"  style={{color:"black"}}>{rating}</h5>
         </div>
       </div>
     </div>
