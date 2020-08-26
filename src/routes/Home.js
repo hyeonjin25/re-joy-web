@@ -192,8 +192,10 @@ class Home extends React.Component {
                                 date={tvshow.first_air_date}
                                 summary={tvshow.overview}
                                 poster={tvshow.poster_path}
+                                backdrop={tvshow.backdrop_path}
                                 genres={tvshow.genre_ids}
                                 rating={tvshow.vote_average}
+                                adult={tvshow.adult}
                               />
                             ))}
                           </Slick>

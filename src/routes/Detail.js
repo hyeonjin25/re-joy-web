@@ -12,8 +12,8 @@ class Detail extends React.Component {
     }
     document.body.style.backgroundColor = "black";
   }
-  
-  componentWillUnmount(){
+
+  componentWillUnmount() {
     document.body.style.backgroundColor = "#535962";
   }
 
@@ -107,9 +107,13 @@ class Detail extends React.Component {
                         src={require("../img/star_icon.png")}
                         alt="rating"
                       />
-                      <h5 className="rating_text">평점:&emsp;{location.state.rating}</h5>
+                      <h5 className="rating_text">
+                        평점:&emsp;{location.state.rating}
+                      </h5>
                     </div>
-                    <h5 className="movie_year">개봉일:&emsp;{location.state.date}</h5>
+                    <h5 className="movie_year">
+                      개봉일:&emsp;{location.state.date}
+                    </h5>
                     <p className="movie_summary">{location.state.summary}</p>
                   </div>
                 </div>

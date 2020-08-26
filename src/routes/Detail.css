@@ -17,7 +17,7 @@
 .detail .poster {width: 300px; height: 460px; padding-bottom:0; box-shadow: -5px 5px rgba(200, 200, 200, 0.3);}
 .detail .movie_data_wrap{width: 600px; height: 600px; display: inline-block; position: relative;}
 .detail .movie_data {display:flex; flex-flow: column; justify-content: flex-start; align-items: flex-start; position: absolute; padding: 50px 50px 0 30px; width: auto;}
-.detail .movie_data .movie_title {font-size: 50px;}
+.detail .movie_data .movie_title {font-size: 50px; overflow: hidden; text-overflow: clip; white-space: normal; width: 600px; }
 .detail .movie_data .de_movie_rating {margin:5px;}
 .detail .movie_data .movie_year {margin:5px;}
 .detail .movie_data .movie_summary {margin:5px;}
