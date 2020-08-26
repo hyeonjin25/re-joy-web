@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f40b84c10550877bd2ab8d738a9e937d",
+    "revision": "fb77d0cf040731469291891bbe51f38d",
     "url": "/re-joy-web/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/re-joy-web/static/css/2.629de7df.chunk.css"
   },
   {
-    "revision": "56abf0ce5989ab979222",
-    "url": "/re-joy-web/static/css/main.b3917e1d.chunk.css"
+    "revision": "bf689ddd3ad7e036bcde",
+    "url": "/re-joy-web/static/css/main.c364fb95.chunk.css"
   },
   {
     "revision": "054a7d40253f087384b8",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/re-joy-web/static/js/2.bbd8dc9b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "56abf0ce5989ab979222",
-    "url": "/re-joy-web/static/js/main.874014f7.chunk.js"
+    "revision": "bf689ddd3ad7e036bcde",
+    "url": "/re-joy-web/static/js/main.305473ba.chunk.js"
   },
   {
     "revision": "0354129d30a6fd2aaf6c",
