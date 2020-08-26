@@ -149,7 +149,7 @@ class Search extends React.Component {
                 <div className="recommend">
                   <div className="container">
                     <section>
-                      <div style={{padding:37, paddingTop:10}}>
+                      <div style={{ padding: 37, paddingTop: 10 }}>
                         <h3 className="ir_su">search results</h3>
                         <div style={{ display: "flex", flexWrap: "wrap" }}>
                           {/* 검색결과 배열 불러오기 */}
@@ -163,8 +163,10 @@ class Search extends React.Component {
                               date={response.release_date}
                               summary={response.overview}
                               poster={response.poster_path}
+                              backdrop={response.backdrop_path}
                               genres={response.genre_ids}
                               rating={response.vote_average}
+                              adult={response.adult}
                             />
                           ))}
                         </div>
@@ -181,10 +183,6 @@ class Search extends React.Component {
                     <h2 className="ir_su">푸터</h2>
                     <span>re-joy</span>
                     <div>https://github.com/hyeonjin25/re-joy-web</div>
-                    <div>
-                      소현진&emsp; | &emsp;최유경&emsp; | &emsp;김형호&emsp; |
-                      &emsp;이유일
-                    </div>
                   </div>
                 </div>
               </footer>

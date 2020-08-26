@@ -221,10 +221,6 @@ class Home extends React.Component {
                     <h2 className="ir_su">푸터</h2>
                     <span>re-joy</span>
                     <div>https://github.com/hyeonjin25/re-joy-web</div>
-                    <div className="members">
-                      소현진&emsp; | &emsp;최유경&emsp; | &emsp;김형호&emsp; |
-                      &emsp;이유일
-                    </div>
                   </div>
                 </div>
               </footer>
