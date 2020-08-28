@@ -1,19 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
+const fs = require('fs');
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:false}));
 
 router.post('/Join_process', (request,response) => {
   console.log('hello');
-  //console.log(post);
-  /*
-  var post = request.body;
-  console.log(post);
-
-  */
-
   var post = request.body;
 
   var person ={
@@ -24,51 +18,27 @@ router.post('/Join_process', (request,response) => {
     birth : post.birth
   };
   console.log(person);
-  response.send(person);
+
+  fs.writeFile(`data/${post.id}`, post.pw, 'utf8', function(err){
+    response.send(person);
+  })
 })
 
-/*
-router.post('/login_process',(request,response)=>{
-  /*var user = [
-    {
-      'id'=1,
-      'pw'=1,
-      'name'='hj',
-      'gender'='F',
-      'email'="1@1",
-      'birth'='111111'
-    },
-    {
-      'id'=2,
-      'pw'=2,
-      'name'='yk',
-      'gender'='F',
-      'email'="2@2",
-      'birth'='222222'
-    },
-    {
-      'id'=3,
-      'pw'=3,
-      'name'='kk',
-      'gender'='F',
-      'email'="3@3",
-      'birth'='333333'
+router.post('/login_process',(request, response)=> {
+  var post =request.body;
+  fs.readFile(`data/${post.id}`, 'utf8', function(err, description){
+    if(err){
+      console.log('아이디가 정확하지 않습니다.');
+      throw err;
     }
-  ]
-
-  var post = request.body;
-  for(i=0; i<3; i++){
-    if(post.id===user[i].id){
-      if(post.pw ===user[i].pw){
-        console.log('로그인완료');
-      }
-      else{
-        console.log('비밀번호가 존재하지 않습니다.');
-      }
+    console.log(post.pw);
+    if(post.pw === description){
+      console.log('로그인 되었습니다.');
     }
     else{
-      console.log('아이디가 존재하지 않습니다.');
+      console.log('비밀번호가 일치하지 않습니다.');
     }
-})
-*/
+  });
+});
+
 module.exports = router;
