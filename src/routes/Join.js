@@ -115,6 +115,7 @@ const Join = () => {
                 type="text"
                 placeholder="아이디"
                 value={id}
+                name="id"
                 onChange={onChangeId}
                 maxLength="20"
                 style={{
@@ -128,6 +129,7 @@ const Join = () => {
                 type="password"
                 placeholder="비밀번호(8~16자리, 숫자 및 영문 반드시 포함)"
                 value={pw}
+                name="pw"
                 onChange={onChangePw}
                 maxLength="20"
                 style={{
@@ -141,6 +143,7 @@ const Join = () => {
                 type="password"
                 placeholder="비밀번호 확인"
                 value={pw_check}
+                name="pw_check"
                 onChange={onChangePw_check}
                 maxLength="20"
                 style={{
@@ -159,6 +162,7 @@ const Join = () => {
                 placeholder="이름"
                 className="input_name"
                 value={name}
+                name="name"
                 onChange={onChangeName}
                 maxLength="10"
                 style={{
@@ -171,7 +175,7 @@ const Join = () => {
               <div className="male_radio">
                 <input
                   type="radio"
-                  name="성별"
+                  name="gender"
                   value="male"
                   id="male"
                   checked
@@ -182,7 +186,7 @@ const Join = () => {
               <div className="female_radio">
                 <input
                   type="radio"
-                  name="성별"
+                  name="gender"
                   value="female"
                   id="female"
                   onChange={onChangeGender}
@@ -195,6 +199,7 @@ const Join = () => {
                 type="text"
                 placeholder="생년월일(yyyymmdd)"
                 value={birth}
+                name="birth"
                 onChange={onChangeBirth}
                 maxLength="8"
                 style={{
@@ -208,6 +213,7 @@ const Join = () => {
                 type="email"
                 placeholder="이메일"
                 value={email}
+                name="email"
                 onChange={onChangeEmail}
                 maxLength="30"
                 style={{
