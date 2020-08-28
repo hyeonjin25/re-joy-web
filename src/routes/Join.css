@@ -1,5 +1,5 @@
 /* 헤더 */
-.join_header {position: relative; height: 100px; line-height: 100px;}
+.join_header {position: relative; height: 90px; line-height: 90px;}
 .join_header h1 {text-align:center; color:white; text-decoration: none;}
 .join_header h1:hover h1:active h1:focus,h1:visited, h1:link {text-decoration: none;}
 .join_header .join_header_top {height: 40px;}
@@ -22,12 +22,13 @@
 .join_main .join_input .female_radio label {line-height: 40px;}
 .join_main .join_input .jender_input {padding:0; width: 40px;}
 .join_main .join_input input[type="submit"] {float: left; width: 525px; height: 45px; margin-top: 8px; padding: 2px 8px 1px 15px; background-color: #c4aff0; 
-    font-weight: 900; font-size:18px; margin-bottom: 20px;}
+    font-weight: 900; font-size:18px; margin-bottom: 10px;}
 .join_main .join_input input[type="submit"]:active {background-color: #A566FF; border-color:#A566FF;}
+#err {color:tomato; margin-left: 10px;}
 
 /* 회원가입으로 이동 */
 footer {text-align: center;}
-#move_join ul {font-size: 16px; text-align: center;}
+#move_join ul {font-size: 16px; text-align: center; margin-top:10px;}
 #move_join li {position: relative; display: inline; padding: 0 20px 0 20px; color:#fff;}
 #move_join li:before {content:""; width: 1px; height: 16px; background-color:#fff; position: absolute; left: 0; top: 2px;}
 #move_join li:first-child {margin-left: 40px;}

@@ -6,50 +6,86 @@ import "./Join.css";
 
 const Join = () => {
   const [id, setId] = useState("");
-  const [pw, setpw] = useState("");
+  const [idValid, setIdValid] = useState(false);
+  const [pw, setPw] = useState("");
+  const [pwValid, setPwValid] = useState(false);
   const [pw_check, setPw_check] = useState("");
+  const [pw_checkValid, setPw_checkValid] = useState(false);
   const [name, setName] = useState("");
+  const [nameValid, setNameValid] = useState(false);
   const [birth, setBirth] = useState("");
+  const [birthValid, setBirthValid] = useState(false);
   const [email, setEmail] = useState("");
+  const [emailValid, setEmailValid] = useState(false);
   const [gender, setGender] = useState({
     male: true,
-    female: false,
+    female: false, 
   });
+  const [err,setErr]=useState("");
 
   const serverUrl = "localhost:9000/Join_process";
 
-  const onSubmit = (
-    async (e) => {
-      e.preventDefault();
-      // console.log({id, pw, pw_check, name, birth, email, gender});
+
+  //입력사항 전부 입력됐을 때만 서버로 전송
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    // console.log({id, pw, pw_check, name, birth, email, gender});
+    if (idValid === false) setErr("아이디를 입력하세요")
+    else if (pwValid === false)
+      setErr("비밀번호가 맞게 입력되었는지 확인해주세요")
+    else if (pw_checkValid === false) setErr("비밀번호확인이 일치하지 않습니다.")
+    else if (nameValid === false) setErr("이름을 입력하세요")
+    else if (birthValid === false)
+      setErr("생년월일이 맞게 입력되었는지 확인해주세요")
+    else if (emailValid === false)
+      setErr("이메일이 맞게 입력되었는지 확인해주세요")
+    else {
       await axios
         .post(serverUrl, { id, pw, pw_check, name, birth, email, gender })
-        // .then((response) => {
-        //   console.log(response);
-        // })
-        // .catch((error) => {
-        //   console.log(error);
-        // });
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
-  );
+  };
 
   const onChangeId = (e) => {
     setId(e.target.value);
+    if (e.target.value.length < 1) setIdValid(false);
+    else {
+      setIdValid(true);
+    }
   };
   const onChangePw = (e) => {
-    setpw(e.target.value);
+    //정규식
+    var ch = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,16}$/;
+    setPw(e.target.value);
+    if (ch.test(e.target.value)) setPwValid(true);
+    else setPwValid(false);
   };
   const onChangePw_check = (e) => {
     setPw_check(e.target.value);
+    if (e.target.value !== pw) setPw_checkValid(false);
+    else setPw_checkValid(true);
   };
   const onChangeName = (e) => {
     setName(e.target.value);
+    if (e.target.value.length < 2) setNameValid(false);
+    else setNameValid(true);
   };
   const onChangeBirth = (e) => {
     setBirth(e.target.value);
+    var br = /^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/;
+    if (br.test(e.target.value)) setBirthValid(true);
+    else setBirthValid(false);
   };
   const onChangeEmail = (e) => {
     setEmail(e.target.value);
+    var em = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+    if (em.test(e.target.value)) setEmailValid(true);
+    else setEmailValid(false);
   };
   const onChangeGender = (e) => {
     setGender(e.target.value);
@@ -81,15 +117,23 @@ const Join = () => {
                 value={id}
                 onChange={onChangeId}
                 maxLength="20"
+                style={{
+                  borderColor:
+                    idValid === true ? "green" : id !== "" ? "red" : "",
+                }}
               />
             </div>
             <div>
               <input
                 type="password"
-                placeholder="비밀번호"
+                placeholder="비밀번호(8~16자리, 숫자 및 영문 반드시 포함)"
                 value={pw}
                 onChange={onChangePw}
                 maxLength="20"
+                style={{
+                  borderColor:
+                    pwValid === true ? "green" : pw !== "" ? "red" : "",
+                }}
               />
             </div>
             <div>
@@ -99,6 +143,14 @@ const Join = () => {
                 value={pw_check}
                 onChange={onChangePw_check}
                 maxLength="20"
+                style={{
+                  borderColor:
+                    pw_checkValid === true
+                      ? "green"
+                      : pw_check !== ""
+                      ? "red"
+                      : "",
+                }}
               />
             </div>
             <div>
@@ -108,7 +160,11 @@ const Join = () => {
                 className="input_name"
                 value={name}
                 onChange={onChangeName}
-                maxLength="20"
+                maxLength="10"
+                style={{
+                  borderColor:
+                    nameValid === true ? "green" : name !== "" ? "red" : "",
+                }}
               />
             </div>
             <div>
@@ -140,7 +196,11 @@ const Join = () => {
                 placeholder="생년월일(yyyymmdd)"
                 value={birth}
                 onChange={onChangeBirth}
-                maxLength="20"
+                maxLength="8"
+                style={{
+                  borderColor:
+                    birthValid === true ? "green" : birth !== "" ? "red" : "",
+                }}
               />
             </div>
             <div>
@@ -149,11 +209,16 @@ const Join = () => {
                 placeholder="이메일"
                 value={email}
                 onChange={onChangeEmail}
-                maxLength="20"
+                maxLength="30"
+                style={{
+                  borderColor:
+                    emailValid === true ? "green" : email !== "" ? "red" : "",
+                }}
               />
             </div>
             <div>
               <input type="submit" value="가입하기" />
+              <div id="err">{err}</div>
             </div>
           </form>
         </div>

@@ -5,7 +5,10 @@ import "../components/reset.css";
 
 const Login = () => {
   const [id, setId] = useState("");
-  const [pw, setpw] = useState("");
+  const [idValid, setIdValid] = useState(false);
+  const [pw, setPw] = useState("");
+  const [pwValid, setPwValid] = useState(false);
+  const [err,setErr]=useState("");
 
   const serverUrl = "localhost:9000/Join_process";
 
@@ -21,15 +24,26 @@ const Login = () => {
   };
 
   const onSubmit = (e) => {
-    e.preventDefault();
-    console.log(id, pw);
-    fetchData();
+    if (idValid === false) setErr("아이디를 입력하세요");
+    else if (pwValid === false)
+      setErr("비밀번호를 입력하세요");
+    else {
+      e.preventDefault();
+      console.log(id, pw);
+      fetchData();
+    }
   };
   const onChangeId = (e) => {
     setId(e.target.value);
+    if (e.target.value.length < 1) setIdValid(false);
+    else {
+      setIdValid(true);
+    }
   };
   const onChangePw = (e) => {
-    setpw(e.target.value);
+    setPw(e.target.value);
+    if (e.target.value.length < 1) setPwValid(false);
+    else setPwValid(true);
   };
 
   return (
@@ -64,7 +78,7 @@ const Login = () => {
             </div>
             <div>
               <input
-                style={{ marginBottom: 20, height: 50 }}
+                style={{ marginBottom: 10, height: 50 }}
                 type="password"
                 placeholder="비밀번호"
                 value={pw}
@@ -74,6 +88,7 @@ const Login = () => {
             </div>
             <div>
               <input type="submit" value="로그인" style={{ height: 50 }} />
+              <div id="err">{err}</div>
             </div>
           </form>
         </div>
