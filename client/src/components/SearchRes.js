@@ -6,6 +6,7 @@ import "./Movie.css";
 
 function SearchRes({ id, title, media_type, name, poster, backdrop, summary, genres, adult, date, rating }) {
    var cont_title = "";
+   //영화와 티비쇼 api의 제목을 뜻하는 이름 통일해주기
    if (media_type === "movie") {
      cont_title = title;
    } else if (media_type === "tv"){

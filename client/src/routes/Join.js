@@ -23,7 +23,7 @@ const Join = () => {
   });
   const [err,setErr]=useState("");
 
-  const serverUrl = "localhost:9000/Join_process";
+  const serverUrl = "http://localhost:9000/user/Join_process";
 
 
   //입력사항 전부 입력됐을 때만 서버로 전송
@@ -44,6 +44,7 @@ const Join = () => {
         .post(serverUrl, { id, pw, pw_check, name, birth, email, gender })
         .then((response) => {
           console.log(response);
+          setId(response.id)
         })
         .catch((error) => {
           console.log(error);
