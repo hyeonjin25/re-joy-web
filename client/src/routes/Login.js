@@ -10,7 +10,7 @@ const Login = () => {
   const [pwValid, setPwValid] = useState(false);
   const [err,setErr]=useState("");
 
-  const serverUrl = "localhost:9000/Join_process";
+  const serverUrl =  "http://localhost:9000/user/login_process";;
 
   const fetchData = async () => {
     await axios
