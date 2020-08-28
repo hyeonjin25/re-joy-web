@@ -46,10 +46,13 @@ class Home extends React.Component {
 
   //검색 버튼 누를 시(onClick)
   onSearch_click = async () => {
-    this.props.history.push({
-      pathname: "/Search/" + this.state.query,
-      state: this.state.query,
-    });
+    //검색어 입력 했을시에만
+    if (this.state.query !== "") {
+      this.props.history.push({
+        pathname: "/Search/" + this.state.query,
+        state: this.state.query,
+      });
+    }
   };
 
   //검색창에 데이터 입력시(onChange)
