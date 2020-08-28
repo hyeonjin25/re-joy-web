@@ -29,7 +29,8 @@ router.post('/login_process',(request, response)=> {
   fs.readFile(`data/${post.id}`, 'utf8', function(err, description){
     if(err){
       console.log('아이디가 정확하지 않습니다.');
-      throw err;
+      response.send();
+      return false;
     }
     console.log(post.pw);
     if(post.pw === description){
