@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "../components/reset.css";
 
-const Login = () => {
+const Login = (props) => {
   const [id, setId] = useState("");
   const [idValid, setIdValid] = useState(false);
   const [pw, setPw] = useState("");
@@ -29,8 +29,10 @@ const Login = () => {
       setErr("비밀번호를 입력하세요");
     else {
       e.preventDefault();
-      console.log(id, pw);
       fetchData();
+
+      //홈으로 이동
+      props.history.push("/")
     }
   };
   const onChangeId = (e) => {

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "../components/reset.css";
 import "./Join.css";
 
-const Join = () => {
+const Join = (props) => {
   const [id, setId] = useState("");
   const [idValid, setIdValid] = useState(false);
   const [pw, setPw] = useState("");
@@ -43,12 +43,18 @@ const Join = () => {
       await axios
         .post(serverUrl, { id, pw, pw_check, name, birth, email, gender })
         .then((response) => {
-          console.log(response);
-          setId(response.id)
+          console.log(response.data.id);
+          //setId(response.id)
         })
         .catch((error) => {
           console.log(error);
         });
+
+        //홈으로 이동
+        props.history.push({
+          pathname:"/",
+          state:{}
+        })
     }
   };
 
@@ -60,30 +66,34 @@ const Join = () => {
     }
   };
   const onChangePw = (e) => {
-    //정규식
-    var ch = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,16}$/;
     setPw(e.target.value);
+    //정규식(8~16자리 문자와 숫자 무조건 포함)
+    var ch = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,16}$/;
     if (ch.test(e.target.value)) setPwValid(true);
     else setPwValid(false);
   };
   const onChangePw_check = (e) => {
     setPw_check(e.target.value);
+    //pw와 같을 시 통과
     if (e.target.value !== pw) setPw_checkValid(false);
     else setPw_checkValid(true);
   };
   const onChangeName = (e) => {
     setName(e.target.value);
+    //2자 이상일시 통과
     if (e.target.value.length < 2) setNameValid(false);
     else setNameValid(true);
   };
   const onChangeBirth = (e) => {
     setBirth(e.target.value);
+    //정규식(yyyymmdd 무조건 8자리, 숫자만 입력가능)
     var br = /^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/;
     if (br.test(e.target.value)) setBirthValid(true);
     else setBirthValid(false);
   };
   const onChangeEmail = (e) => {
     setEmail(e.target.value);
+    //정규식 (이메일 형식대로 해야 통과)
     var em = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
     if (em.test(e.target.value)) setEmailValid(true);
     else setEmailValid(false);
