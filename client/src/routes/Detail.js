@@ -4,13 +4,22 @@ import "./Detail.css";
 import "../components/Movie.css";
 
 class Detail extends React.Component {
+  state = {
+    adult: "",
+  };
+
   componentDidMount() {
     const { location, history } = this.props;
+
     //컨텐츠 클릭을 통해 페이지로 들어온게 아닌경우 강제로 홈으로 이동시킴(state가 undefined일 떄)
     if (location.state === undefined) {
       history.push("/");
     }
     document.body.style.backgroundColor = "black";
+
+    //청소년 관람불가인지 확인
+    if (location.state.adult === true)
+       this.setState({adult : "청소년 관람 불가"})
   }
 
   componentWillUnmount() {
@@ -101,6 +110,7 @@ class Detail extends React.Component {
                 <div className="movie_data_wrap">
                   <div className="movie_data">
                     <h3 className="movie_title">{location.state.title}</h3>
+                    <div>{this.state.adult}</div>
                     <div className="de_movie_rating">
                       <img
                         className="star_icon"
