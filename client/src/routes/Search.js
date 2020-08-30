@@ -25,7 +25,6 @@ class Search extends React.Component {
           query_results: response.data.results,
           isLoding: false,
         });
-        console.log(this.state.query_results);
       })
       .catch((errer) => {
         console.log("errer: ", errer.message);
@@ -39,7 +38,6 @@ class Search extends React.Component {
       history.push("/");
     }
     this.setState({ query: match.params.query });
-    console.log("history.location.state");
     this.getSearchRes();
   }
 
@@ -158,8 +156,7 @@ class Search extends React.Component {
                               key={response.id}
                               id={response.id}
                               media_type={response.media_type}
-                              title={response.title}
-                              name={response.name}
+                              title={response.title===undefined?response.name:response.title}
                               date={response.release_date}
                               summary={response.overview}
                               poster={response.poster_path}

@@ -1,33 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./reset.css";
 import "./Movie.css";
 
-function SearchRes({ id, title, media_type, name, poster, backdrop, summary, genres, adult, date, rating }) {
-   var cont_title = "";
-   //영화와 티비쇼 api의 제목을 뜻하는 이름 통일해주기
-   if (media_type === "movie") {
-     cont_title = title;
-   } else if (media_type === "tv"){
-    cont_title = name;
-   }
+function SearchRes({ id, title, poster, backdrop, summary, genres, adult, date, rating }) {
+
   return (
     <Link
         to={{
           pathname: "/Detail/" + title,
-          state: { id, cont_title, poster, backdrop, summary, genres, adult, date, rating },
+          state: { id, title, poster, backdrop, summary, genres, adult, date, rating },
         }}
       >
       <div className="movie" style={{ marginLeft: 13, marginRight: 13 }}>
         <img
           className="poster"
           src={"https://image.tmdb.org/t/p/w500" + poster}
-          alt={cont_title}
-          title={cont_title}
+          alt={title}
+          title={title}
         />
         <div className="movie_data">
-          <h3 className="movie_title" style={{color:"black"}}>{cont_title}</h3>
+          <h3 className="movie_title" style={{color:"black"}}>{title}</h3>
           <div className="movie_rating">
             <img
               className="star_icon"
