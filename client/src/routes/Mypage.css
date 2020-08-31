@@ -1,0 +1,44 @@
+
+            #mypage_wrap body {background-color: rgba(30,30,30,0.4);}
+            #mypage_wrap div {
+                margin:auto;
+                background-color: rgba(30,30,30,0.4);
+			    text-align: left;
+			    border:5px solid #A566FF;
+			    padding:20px;
+            }
+            #mypage_wrap h1 {
+			color:white;
+			font-size:150%;
+			font-weight:bold;
+		    }
+			#mypage_wrap .container{
+                height:300px;
+				display:flex;
+				flex-direction:row;
+			}
+			#mypage_wrap .starlist{
+				background-color:gray;
+				color:white;
+                border:0;
+                position:relative;
+                top:-19px;
+                height:298px;
+                flex-grow:2;
+            }
+            #mypage_wrap button{
+                border-radius: 5px;
+                width:30px;
+                background-color:white;
+                color:gray;
+                height:30px;
+            }
+            #mypage_wrap .setting{
+                position:absolute;
+                top:500px;
+                height:100px;
+                width:300px;
+            }
+            #mypage_wrap p{
+                font-size:20px;
+            }
