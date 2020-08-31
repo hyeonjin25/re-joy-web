@@ -19,7 +19,7 @@ class Detail extends React.Component {
 
     //청소년 관람불가인지 확인
     if (location.state.adult === true)
-       this.setState({adult : "청소년 관람 불가"})
+      this.setState({ adult: "청소년 관람 불가" });
   }
 
   componentWillUnmount() {
@@ -99,6 +99,13 @@ class Detail extends React.Component {
             ></div>
             <div id="de_movie">
               <div className="detail movie">
+                <button type="button" id="favorite" value="favorite" name="favorite">
+                  <img
+                        className="star_icon"
+                        src={require("../img/star_icon.png")}
+                        alt="rating"
+                      />
+                  favorite</button>
                 <img
                   className="poster"
                   src={
