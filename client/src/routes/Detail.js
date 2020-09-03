@@ -17,10 +17,10 @@ class Detail extends React.Component {
     }
     document.body.style.backgroundColor = "black";
 
-    //청소년 관람불가인지 확인
-    if (location.state.adult === true)
-      this.setState({ adult: "청소년 관람 불가" });
-  }
+  //   //청소년 관람불가인지 확인
+  //   if (location.state.adult === true)
+  //     this.setState({ adult: "청소년 관람 불가" });
+   }
 
   componentWillUnmount() {
     document.body.style.backgroundColor = "#535962";
@@ -99,7 +99,7 @@ class Detail extends React.Component {
             ></div>
             <div id="de_movie">
               <div className="detail movie">
-                <button type="button" id="favorite" value="favorite" name="favorite">
+                <button type="button" id="favorite" value="favorite" name="favorite" style={{zIndex:"3"}}>
                   <img
                         className="star_icon"
                         src={require("../img/star_icon.png")}
@@ -117,7 +117,7 @@ class Detail extends React.Component {
                 <div className="movie_data_wrap">
                   <div className="movie_data">
                     <h3 className="movie_title">{location.state.title}</h3>
-                    <div>{this.state.adult}</div>
+                    {/* <div>{this.state.adult}</div> */}
                     <div className="de_movie_rating">
                       <img
                         className="star_icon"
