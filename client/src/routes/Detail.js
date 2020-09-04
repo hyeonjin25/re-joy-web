@@ -6,6 +6,7 @@ import "../components/Movie.css";
 class Detail extends React.Component {
   state = {
     adult: "",
+    fav: false,
   };
 
   componentDidMount() {
@@ -17,14 +18,18 @@ class Detail extends React.Component {
     }
     document.body.style.backgroundColor = "black";
 
-  //   //청소년 관람불가인지 확인
-  //   if (location.state.adult === true)
-  //     this.setState({ adult: "청소년 관람 불가" });
-   }
+    //   //청소년 관람불가인지 확인
+    //   if (location.state.adult === true)
+    //     this.setState({ adult: "청소년 관람 불가" });
+  }
 
   componentWillUnmount() {
     document.body.style.backgroundColor = "#535962";
   }
+
+  fav_func = () => {
+    this.setState({ fav: true });
+  };
 
   render() {
     const { location } = this.props;
@@ -99,13 +104,21 @@ class Detail extends React.Component {
             ></div>
             <div id="de_movie">
               <div className="detail movie">
-                <button type="button" id="favorite" value="favorite" name="favorite" style={{zIndex:"3"}}>
+                <button
+                  type="button"
+                  onClick="fav_func()"
+                  id="favorite"
+                  value="favorite"
+                  name="favorite"
+                  style={{ zIndex: "3" }}
+                >
                   <img
-                        className="star_icon"
-                        src={require("../img/star_icon.png")}
-                        alt="rating"
-                      />
-                  favorite</button>
+                    className="star_icon"
+                    src={require("../img/star_icon.png")}
+                    alt="rating"
+                  />
+                  favorite
+                </button>
                 <img
                   className="poster"
                   src={
