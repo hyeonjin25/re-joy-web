@@ -16,6 +16,10 @@ class Detail extends React.Component {
     if (location.state === undefined) {
       history.push("/");
     }
+    
+    //페이지가 이동되어 올 떄 스크롤 맨 위로 올리기
+    window.scrollTo(0, 0);
+
     document.body.style.backgroundColor = "black";
 
     //   //청소년 관람불가인지 확인
