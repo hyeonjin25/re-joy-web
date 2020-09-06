@@ -17,28 +17,25 @@ const Join = (props) => {
   const [birthValid, setBirthValid] = useState(false);
   const [email, setEmail] = useState("");
   const [emailValid, setEmailValid] = useState(false);
-  const [gender, setGender] = useState({
-    male: true,
-    female: false, 
-  });
-  const [err,setErr]=useState("");
+  const [gender, setGender] = useState("M");
+  const [err, setErr] = useState("");
 
   const serverUrl = "http://localhost:9000/user/Join_process";
-
 
   //입력사항 전부 입력됐을 때만 서버로 전송
   const onSubmit = async (e) => {
     e.preventDefault();
     // console.log({id, pw, pw_check, name, birth, email, gender});
-    if (idValid === false) setErr("아이디를 입력하세요")
+    if (idValid === false) setErr("아이디를 입력하세요");
     else if (pwValid === false)
-      setErr("비밀번호가 맞게 입력되었는지 확인해주세요")
-    else if (pw_checkValid === false) setErr("비밀번호확인이 일치하지 않습니다.")
-    else if (nameValid === false) setErr("이름을 입력하세요")
+      setErr("비밀번호가 맞게 입력되었는지 확인해주세요");
+    else if (pw_checkValid === false)
+      setErr("비밀번호확인이 일치하지 않습니다.");
+    else if (nameValid === false) setErr("이름을 입력하세요");
     else if (birthValid === false)
-      setErr("생년월일이 맞게 입력되었는지 확인해주세요")
+      setErr("생년월일이 맞게 입력되었는지 확인해주세요");
     else if (emailValid === false)
-      setErr("이메일이 맞게 입력되었는지 확인해주세요")
+      setErr("이메일이 맞게 입력되었는지 확인해주세요");
     else {
       await axios
         .post(serverUrl, { id, pw, pw_check, name, birth, email, gender })
@@ -50,11 +47,11 @@ const Join = (props) => {
           console.log(error);
         });
 
-        //홈으로 이동
-        props.history.push({
-          pathname:"/",
-          state:{}
-        })
+      //홈으로 이동
+      props.history.push({
+        pathname: "/",
+        state: {},
+      });
     }
   };
 
@@ -99,7 +96,9 @@ const Join = (props) => {
     else setEmailValid(false);
   };
   const onChangeGender = (e) => {
-    setGender(e.target.value);
+    if (e.target.value === "female") setGender("W");
+    else setGender("M");
+    console.log(gender);
   };
   return (
     <div className="join_wrap">
