@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Detail.css";
 import "../components/Movie.css";
+import { element } from "prop-types";
 
 class Detail extends React.Component {
   state = {
@@ -16,7 +17,7 @@ class Detail extends React.Component {
     if (location.state === undefined) {
       history.push("/");
     }
-    
+
     //페이지가 이동되어 올 떄 스크롤 맨 위로 올리기
     window.scrollTo(0, 0);
 
@@ -32,7 +33,12 @@ class Detail extends React.Component {
   }
 
   fav_func = () => {
-    this.setState({ fav: true });
+    if (this.state.fav === false) {
+      this.setState({ fav: true })
+      //document.getElementById("favorite").style.backgroundColor("black")
+  }
+    else this.setState({ fav: false });
+    console.log(this.state.fav);
   };
 
   render() {
@@ -110,7 +116,7 @@ class Detail extends React.Component {
               <div className="detail movie">
                 <button
                   type="button"
-                  onClick="fav_func()"
+                  onClick={this.fav_func}
                   id="favorite"
                   value="favorite"
                   name="favorite"
