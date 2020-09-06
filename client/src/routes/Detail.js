@@ -35,10 +35,8 @@ class Detail extends React.Component {
   fav_func = () => {
     if (this.state.fav === false) {
       this.setState({ fav: true })
-      //document.getElementById("favorite").style.backgroundColor("black")
   }
     else this.setState({ fav: false });
-    console.log(this.state.fav);
   };
 
   render() {
@@ -120,7 +118,9 @@ class Detail extends React.Component {
                   id="favorite"
                   value="favorite"
                   name="favorite"
-                  style={{ zIndex: "3" }}
+                  style={{ zIndex: "3" ,
+                backgroundColor:this.state.fav===true?"#faf0af":"",
+                color:this.state.fav===true?"black":""}}
                 >
                   <img
                     className="star_icon"
