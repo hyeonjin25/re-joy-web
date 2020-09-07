@@ -45,13 +45,13 @@ class Home extends React.Component {
     this.getMovies();
     this.getTvshows();
     //로그인을 통해 홈으로 넘어온 경우(로그인 여부와 아이디가 state로 넘어온 경우)에만 state 업데이트하기
-    if (this.props.location !== undefined) {
+    if (this.props.location.state !== undefined) {
       this.setState({
         login: this.props.location.state.login,
         id: this.props.location.state.id
       });
     }
-    console.log(this.props);
+    //console.log(this.props);
   }
 
   //로그인 여부에 따라 헤더메뉴 변경
