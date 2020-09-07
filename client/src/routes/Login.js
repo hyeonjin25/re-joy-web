@@ -19,6 +19,7 @@ const Login = (props) => {
       .then((respond) => {
         setLogin(respond.data.is_logined);
         setId(respond.data.userid);
+        console.log(respond.data.id);
       })
       .catch((error) => {
         console.log("error :", error.message);
@@ -33,7 +34,7 @@ const Login = (props) => {
       fetchData();
 
       //홈으로 이동
-      props.history.push({ pathname: "/", state: {login,id} });
+      props.history.push({ pathname: "/", state: { login: login, id: id } });
     }
   };
   const onChangeId = (e) => {
