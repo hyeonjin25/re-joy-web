@@ -8,15 +8,17 @@ const Login = (props) => {
   const [idValid, setIdValid] = useState(false);
   const [pw, setPw] = useState("");
   const [pwValid, setPwValid] = useState(false);
-  const [err,setErr]=useState("");
+  const [err, setErr] = useState("");
+  const [login, setLogin] = useState(false);
 
-  const serverUrl =  "http://localhost:9000/user/login_process";;
+  const serverUrl = "http://localhost:9000/user/login_process";
 
   const fetchData = async () => {
     await axios
       .post(serverUrl, { id, pw })
       .then((respond) => {
-        console.log(respond);
+        setLogin(respond.data.is_logined);
+        setId(respond.data.userid);
       })
       .catch((error) => {
         console.log("error :", error.message);
@@ -25,14 +27,13 @@ const Login = (props) => {
 
   const onSubmit = (e) => {
     if (idValid === false) setErr("아이디를 입력하세요");
-    else if (pwValid === false)
-      setErr("비밀번호를 입력하세요");
+    else if (pwValid === false) setErr("비밀번호를 입력하세요");
     else {
       e.preventDefault();
       fetchData();
 
       //홈으로 이동
-      props.history.push("/")
+      props.history.push({ pathname: "/", state: {login,id} });
     }
   };
   const onChangeId = (e) => {
