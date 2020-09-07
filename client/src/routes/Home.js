@@ -16,6 +16,8 @@ class Home extends React.Component {
     movies: [],
     tvshows: [],
     query: "",
+    login: false,
+    id: "",
   };
 
   getMovies = async () => {
@@ -42,7 +44,56 @@ class Home extends React.Component {
   componentDidMount() {
     this.getMovies();
     this.getTvshows();
+    //로그인을 통해 홈으로 넘어온 경우(로그인 여부와 아이디가 state로 넘어온 경우)에만 state 업데이트하기
+    if (this.props.location !== undefined) {
+      this.setState({
+        login: this.props.location.state.login,
+        id: this.props.location.state.id
+      });
+    }
+    console.log(this.props);
   }
+
+  //로그인 여부에 따라 헤더메뉴 변경
+  header_menu = () => {
+    //로그인시 로그아웃 버튼 나오도록
+    if (this.state.login === true) {
+      return (
+        <div className="header_log">
+          <Link
+            to={{
+              pathname: "/",
+              state: {},
+            }}
+          >
+            <li className="logout">로그아웃</li>
+          </Link>
+        </div>
+      );
+    }
+    //로그인 안했을 시 로그인, 회원가입 버튼 나오도록
+    else {
+      return (
+        <div className="header_log">
+          <Link
+            to={{
+              pathname: "/Login",
+            }}
+          >
+            <li className="login">로그인</li>
+          </Link>
+          <Link
+            to={{
+              pathname: "/Join",
+              state: {},
+            }}
+          >
+            <li className="join">회원가입</li>
+          </Link>
+        </div>
+      );
+    }
+  };
 
   //검색 버튼 누를 시(onClick)
   onSearch_click = async () => {
@@ -88,22 +139,7 @@ class Home extends React.Component {
                   <div className="header_top">
                     <div className="container">
                       <ul>
-                        <Link
-                          to={{
-                            pathname: "/Login",
-                            state: {},
-                          }}
-                        >
-                          <li className="login">로그인</li>
-                        </Link>
-                        <Link
-                          to={{
-                            pathname: "/Join",
-                            state: {},
-                          }}
-                        >
-                          <li className="join">회원가입</li>
-                        </Link>
+                        {this.header_menu()}
                         <Link
                           to={{
                             pathname: "/Mypage",
