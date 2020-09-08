@@ -203,9 +203,9 @@ class Home extends React.Component {
               <main>
                 {/* 추천 */}
                 <div className="recommend">
+                  <div className="container">
                   <div className="glass"></div>
                   <div className="glass second_glass"></div>
-                  <div className="container">
                     <section>
                       <div>
                         <h3 className="ir_su">recommend</h3>

@@ -35,9 +35,8 @@ nav #search .search_cont .search_button {display: inline-block;}
 
 
 /* 컨텐츠 - 추천 */
-main .recommend {position: relative;}
-main .recommend .container {background-color:#dddddd}
-.glass {position: absolute; top: 120px; left:66px; width: 1131px; height: 370px; background-color:rgba(30,30,30,0.3) }
+main .recommend .container {background-color:#dddddd; position: relative;}
+.glass {position: absolute; top: 120px; left: -15px; margin:0 auto; width: 1131px; height: 370px; background-color:rgba(30,30,30,0.3) }
 main .recommend .second_glass {position: absolute; top: 610px;}
 main .recommend h3 {color:#41444b}
 main .recommend .container .recommend_sort_title {margin-left: 15px;}
