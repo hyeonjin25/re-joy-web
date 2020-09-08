@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Cookies from "js-cookie";
 import { Link } from "react-router-dom";
 import "./Mypage.css";
 
 function Mypage() {
+  const [login_id, setLogin_id] = useState("");
+  const [is_logined, setIs_logined] = useState(false);
+
+  useEffect(() => {
+    //로그인이 되어있는지 확인하기
+    if (Cookies.get("login_id")) {
+      //로그인 되어있을 경우
+      setIs_logined(true);
+      setLogin_id(Cookies.get("login_id"));
+    }
+  }, []);
+
   return (
     <div id="mypage_wrap">
       <header id="de_header">
@@ -57,7 +70,7 @@ function Mypage() {
         <div>
           <div className="container">
             <h3 className="ir_su">즐겨찾기 콘텐츠</h3>
-            <div className="starlist">나의 즐겨찾기 콘텐츠</div>
+                <div className="starlist">{login_id}님의 즐겨찾기 콘텐츠</div>
           </div>
         </div>
 

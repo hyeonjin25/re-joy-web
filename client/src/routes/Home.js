@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Cookies from "js-cookie";
 import { Link } from "react-router-dom";
 import Movie from "../components/Movie";
 import Tvshow from "../components/Tvshow";
@@ -16,8 +17,7 @@ class Home extends React.Component {
     movies: [],
     tvshows: [],
     query: "",
-    login: false,
-    id: "",
+    is_logined: false,
   };
 
   getMovies = async () => {
@@ -44,20 +44,26 @@ class Home extends React.Component {
   componentDidMount() {
     this.getMovies();
     this.getTvshows();
-    //로그인을 통해 홈으로 넘어온 경우(로그인 여부와 아이디가 state로 넘어온 경우)에만 state 업데이트하기
-    if (this.props.location.state !== undefined) {
+    //로그인이 되어있는지 확인하기
+    if (Cookies.get("login_id")) {
+      //로그인 되어있을 경우
       this.setState({
-        login: this.props.location.state.login,
-        id: this.props.location.state.id
+        is_logined: true,
       });
+      console.log(Cookies.get("login_id"))
     }
     //console.log(this.props);
   }
 
+  logout = () => {
+    Cookies.remove("login_id");
+    window.location.reload();
+  };
+
   //로그인 여부에 따라 헤더메뉴 변경
   header_menu = () => {
     //로그인시 로그아웃 버튼 나오도록
-    if (this.state.login === true) {
+    if (this.state.is_logined === true) {
       return (
         <div className="header_log">
           <Link
@@ -66,7 +72,9 @@ class Home extends React.Component {
               state: {},
             }}
           >
-            <li className="logout">로그아웃</li>
+            <li className="logout" onClick={this.logout}>
+              로그아웃
+            </li>
           </Link>
         </div>
       );

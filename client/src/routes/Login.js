@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Cookies from "js-cookie";
 import { Link } from "react-router-dom";
 import "../components/reset.css";
 
@@ -9,7 +10,6 @@ const Login = (props) => {
   const [pw, setPw] = useState("");
   const [pwValid, setPwValid] = useState(false);
   const [err, setErr] = useState("");
-  const [login, setLogin] = useState(false);
 
   const serverUrl = "http://localhost:9000/user/login_process";
 
@@ -17,9 +17,16 @@ const Login = (props) => {
     await axios
       .post(serverUrl, { id, pw })
       .then((respond) => {
-        setLogin(respond.data.is_logined);
-        setId(respond.data.userid);
-        console.log(respond.data.id);
+        //로그인이 제대로 되면(is_logined가 true로 넘어오면)
+        if (respond.data.is_logined) {
+          //쿠키에 아이디 저장
+          Cookies.set("login_id", respond.data.userid);
+          //홈으로 이동
+          props.history.push({
+            pathname: "/",
+            // state: { is_logined: respond.data.is_logined, id: respond.data.userid },
+          });
+        }
       })
       .catch((error) => {
         console.log("error :", error.message);
@@ -32,9 +39,6 @@ const Login = (props) => {
     else {
       e.preventDefault();
       fetchData();
-
-      //홈으로 이동
-      props.history.push({ pathname: "/", state: { login: login, id: id } });
     }
   };
   const onChangeId = (e) => {
