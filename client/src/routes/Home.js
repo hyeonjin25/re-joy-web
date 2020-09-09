@@ -20,6 +20,7 @@ class Home extends React.Component {
     is_logined: false,
   };
 
+  //영화 api가져오기(tmdb)
   getMovies = async () => {
     const movieUrl =
       "https://api.themoviedb.org/3/movie/now_playing?api_key=9aa38313510a50c3ae30091b52efcc90&language=ko&page=1®ion=KR";
@@ -31,6 +32,7 @@ class Home extends React.Component {
     //console.log(results);
   };
 
+  //티비 프로그램 api가져오기(tmdb)
   getTvshows = async () => {
     const tvshowUrl =
       "https://api.themoviedb.org/3/tv/on_the_air?api_key=9aa38313510a50c3ae30091b52efcc90&language=ko&page=1";
