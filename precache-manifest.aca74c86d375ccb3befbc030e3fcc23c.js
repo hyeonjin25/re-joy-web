@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b1061524f7766fd5b66de3515392728a",
+    "revision": "2fcee5e132036a91b0192b11e453ee39",
     "url": "/re-joy-web/index.html"
   },
   {
-    "revision": "9ab4e69eb5c0d1249845",
+    "revision": "e3264a36c52003ef8889",
     "url": "/re-joy-web/static/css/2.629de7df.chunk.css"
   },
   {
-    "revision": "a1f8233cb3c2fc7cea7e",
-    "url": "/re-joy-web/static/css/main.cfaa04c1.chunk.css"
+    "revision": "49f2363170120d2eef18",
+    "url": "/re-joy-web/static/css/main.ecfd23ba.chunk.css"
   },
   {
-    "revision": "9ab4e69eb5c0d1249845",
-    "url": "/re-joy-web/static/js/2.420401b3.chunk.js"
+    "revision": "e3264a36c52003ef8889",
+    "url": "/re-joy-web/static/js/2.beef734c.chunk.js"
   },
   {
-    "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/re-joy-web/static/js/2.420401b3.chunk.js.LICENSE.txt"
+    "revision": "14060d5403b5cb599a71704f7b391b06",
+    "url": "/re-joy-web/static/js/2.beef734c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a1f8233cb3c2fc7cea7e",
-    "url": "/re-joy-web/static/js/main.dc795f95.chunk.js"
+    "revision": "49f2363170120d2eef18",
+    "url": "/re-joy-web/static/js/main.2850eae5.chunk.js"
   },
   {
     "revision": "0354129d30a6fd2aaf6c",
