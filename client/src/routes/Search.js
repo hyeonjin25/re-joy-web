@@ -119,27 +119,30 @@ class Search extends React.Component {
                 </div>
               </header>
 
-              <nav>
+              <nav style={{height:30}}>
                 {/* 검색 */}
-                <fieldset id="search">
+                {/* <fieldset id="search">
                   <div className="container">
-                    <legend className="ir_su">search</legend>
-                    <form className="search_cont">
+                  <legend className="ir_su">search</legend>
+                  <form className="search_cont">
                       <input
-                        type="text"
+                      type="text"
                         value={this.state.query}
                         onChange={this.onSearch}
                         id="input_search"
                         placeholder="search"
                         maxLength="50"
-                      />
-                      <button type="submit" onClick={this.onSearch_click}>
+                        />
+                        <button type="submit" onClick={this.onSearch_click}>
                         <span className="search_button"></span>
                       </button>
-                    </form>
-                  </div>
-                </fieldset>
+                      </form>
+                      </div>
+                    </fieldset> */}
                 {/* //검색 */}
+                <div className="container">
+                  <span>"{this.state.query}"에 대한 검색결과...</span>
+                </div>
               </nav>
 
               <main>
@@ -156,7 +159,11 @@ class Search extends React.Component {
                               key={response.id}
                               id={response.id}
                               media_type={response.media_type}
-                              title={response.title===undefined?response.name:response.title}
+                              title={
+                                response.title === undefined
+                                  ? response.name
+                                  : response.title
+                              }
                               date={response.release_date}
                               summary={response.overview}
                               poster={response.poster_path}
