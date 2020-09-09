@@ -1,12 +1,14 @@
 import React from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
 import "./Detail.css";
 import "../components/Movie.css";
 import { element } from "prop-types";
 
 class Detail extends React.Component {
   state = {
-    adult: "",
+    //adult: "",
     fav: false,
   };
 
@@ -34,9 +36,25 @@ class Detail extends React.Component {
 
   fav_func = () => {
     if (this.state.fav === false) {
-      this.setState({ fav: true })
-  }
-    else this.setState({ fav: false });
+      this.setState({ fav: true });
+    } else this.setState({ fav: false });
+  };
+
+  //서버에 favorite정보 전달하기 위해 연결
+  fetchData = async () => {
+    const { location } = this.props;
+    var serverUrl = "http://localhost:9000/user/login_process";
+    await axios
+      .post(serverUrl, [
+        Cookies.get("login_id"),
+        location.state.title,
+        this.state.fav,
+      ])
+      .then((respond) => {})
+      .catch((error) => {
+        console.log("error :", error.message);
+        this.setState({ fav: false });
+      });
   };
 
   render() {
@@ -118,16 +136,18 @@ class Detail extends React.Component {
                   id="favorite"
                   value="favorite"
                   name="favorite"
-                  style={{ zIndex: "3" ,
-                backgroundColor:this.state.fav===true?"#faf0af":"",
-                color:this.state.fav===true?"black":""}}
+                  style={{
+                    zIndex: "3",
+                    //버튼이 클릭됐을 때 구분할 수 있게 색 바꾸기
+                    backgroundColor: this.state.fav === true ? "#faf0af" : "",
+                    color: this.state.fav === true ? "black" : "",
+                  }}
                 >
                   <img
                     className="star_icon"
                     src={require("../img/star_icon.png")}
                     alt="rating"
                   />
-                  favorite
                 </button>
                 <img
                   className="poster"
