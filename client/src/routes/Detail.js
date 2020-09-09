@@ -9,7 +9,7 @@ import { element } from "prop-types";
 class Detail extends React.Component {
   state = {
     //adult: "",
-    fav: false,
+    fav_process: false,
   };
 
   componentDidMount() {
@@ -35,25 +35,36 @@ class Detail extends React.Component {
   }
 
   fav_func = () => {
-    if (this.state.fav === false) {
-      this.setState({ fav: true });
-    } else this.setState({ fav: false });
+    //로그인 돼있으면
+    if (Cookies.get("login_id")) {
+      if (this.state.fav_process === false) {
+        this.setState({ fav_process: true });
+      } else this.setState({ fav_process: false });
+      //바뀐 fav상태 전달
+      this.fetchData();
+    }
+    //로그인 안돼있을 경우 경고
+    else{
+      window.alert("로그인이 필요한 기능입니다!")
+    }
   };
 
   //서버에 favorite정보 전달하기 위해 연결
   fetchData = async () => {
     const { location } = this.props;
-    var serverUrl = "http://localhost:9000/user/login_process";
+    var serverUrl = "http://localhost:9000/client/like_process ";
     await axios
       .post(serverUrl, [
         Cookies.get("login_id"),
         location.state.title,
-        this.state.fav,
+        this.state.fav_process,
       ])
-      .then((respond) => {})
+      .then((respond) => {
+        console.log("즐겨찾기 완료!")
+      })
       .catch((error) => {
         console.log("error :", error.message);
-        this.setState({ fav: false });
+        this.setState({ fav_process: false });
       });
   };
 
@@ -139,8 +150,8 @@ class Detail extends React.Component {
                   style={{
                     zIndex: "3",
                     //버튼이 클릭됐을 때 구분할 수 있게 색 바꾸기
-                    backgroundColor: this.state.fav === true ? "#faf0af" : "",
-                    color: this.state.fav === true ? "black" : "",
+                    backgroundColor: this.state.fav_process === true ? "#faf0af" : "",
+                    color: this.state.fav_process === true ? "black" : "",
                   }}
                 >
                   <img
