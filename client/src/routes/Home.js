@@ -52,7 +52,7 @@ class Home extends React.Component {
       this.setState({
         is_logined: true,
       });
-      console.log(Cookies.get("login_id"))
+      console.log(Cookies.get("login_id"));
     }
     //console.log(this.props);
   }
@@ -165,14 +165,13 @@ class Home extends React.Component {
                   {/* 웹 이름 */}
                   <div className="header_center">
                     <div className="container">
-                      <Link
-                        style={{ textDecoration: "none" }}
-                        to={{
-                          pathname: "/",
+                      <span
+                        onClick={() => {
+                          window.location.reload();
                         }}
                       >
-                        <h1>re-joy</h1>
-                      </Link>
+                        <h1 style={{ cursor: "pointer"}}>re-joy</h1>
+                      </span>
                     </div>
                   </div>
                   {/* //웹 이름 */}
@@ -206,8 +205,8 @@ class Home extends React.Component {
                 {/* 추천 */}
                 <div className="recommend">
                   <div className="container">
-                  <div className="glass"></div>
-                  <div className="glass second_glass"></div>
+                    <div className="glass"></div>
+                    <div className="glass second_glass"></div>
                     <section>
                       <div>
                         <h3 className="ir_su">recommend</h3>
