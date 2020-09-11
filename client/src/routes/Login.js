@@ -26,9 +26,13 @@ const Login = (props) => {
             pathname: "/",
             // state: { is_logined: respond.data.is_logined, id: respond.data.userid },
           });
+        }else{
+          window.alert("아이디 또는 비밀번호를 잘못 입력하셨습니다.")
+          window.location.reload();
         }
       })
       .catch((error) => {
+        
         console.log("error :", error.message);
       });
   };
