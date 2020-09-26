@@ -11,7 +11,7 @@ const Login = (props) => {
   const [pwValid, setPwValid] = useState(false);
   const [err, setErr] = useState("");
 
-  const serverUrl = "http://localhost:9000/user/login_process";
+  const serverUrl = "http://18.207.233.148:9000/user/login_process";
 
   const fetchData = async () => {
     await axios

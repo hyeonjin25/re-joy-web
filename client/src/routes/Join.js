@@ -20,7 +20,7 @@ const Join = (props) => {
   const [gender, setGender] = useState("M");
   const [err, setErr] = useState("");
 
-  const serverUrl = "http://localhost:9000/user/Join_process";
+  const serverUrl = "http://18.207.233.148:9000/user/Join_process";
 
   //입력사항 전부 입력됐을 때만 서버로 전송
   const onSubmit = async (e) => {
@@ -40,7 +40,7 @@ const Join = (props) => {
       await axios
         .post(serverUrl, { id, pw, pw_check, name, birth, email, gender })
         .then((response) => {
-          console.log(response.data.id);
+          //console.log(response.data.id);
           //setId(response.id)
         })
         .catch((error) => {
@@ -98,7 +98,6 @@ const Join = (props) => {
   const onChangeGender = (e) => {
     if (e.target.value === "female") setGender("W");
     else setGender("M");
-    console.log(gender);
   };
   return (
     <div className="join_wrap">
