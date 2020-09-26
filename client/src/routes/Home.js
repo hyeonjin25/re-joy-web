@@ -52,7 +52,7 @@ class Home extends React.Component {
       this.setState({
         is_logined: true,
       });
-      console.log(Cookies.get("login_id"));
+      //console.log(Cookies.get("login_id"));
     }
     //console.log(this.props);
   }
