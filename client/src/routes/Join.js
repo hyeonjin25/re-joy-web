@@ -101,18 +101,6 @@ const Join = (props) => {
   };
   return (
     <div className="join_wrap">
-      {/* 헤더 */}
-      <header className="join_header">
-        <Link
-          style={{ textDecoration: "none" }}
-          to={{
-            pathname: "/",
-          }}
-        >
-          <h1>re-joy</h1>
-        </Link>
-      </header>
-      {/* //헤더 */}
       {/* 컨텐츠 */}
       <main className="join_main">
         {/* 회원가입 입력 */}

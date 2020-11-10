@@ -60,18 +60,6 @@ const Login = (props) => {
 
   return (
     <div className="login_wrap">
-      {/* 헤더 */}
-      <header className="join_header">
-        <Link
-          style={{ textDecoration: "none" }}
-          to={{
-            pathname: "/",
-          }}
-        >
-          <h1>re-joy</h1>
-        </Link>
-      </header>
-      {/* //헤더 */}
       {/* 컨텐츠 */}
       <main className="join_main" style={{ marginTop: 50 }}>
         {/* 로그인 입력 */}
@@ -104,11 +92,7 @@ const Login = (props) => {
             </div>
           </form>
         </div>
-        {/* //로그인 입력 */}
-      </main>
-      {/* 컨텐츠 */}
-      {/* 푸터 */}
-      <footer>
+        {/* 아이디 비번 찾기 */}
         <div id="move_join">
           <ul>
             <Link
@@ -123,8 +107,9 @@ const Login = (props) => {
             <li>비밀번호찾기</li>
           </ul>
         </div>
-      </footer>
-      {/* //푸터 */}
+        {/* //로그인 입력 */}
+      </main>
+      {/* 컨텐츠 */}
     </div>
   );
 };

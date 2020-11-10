@@ -1,0 +1,36 @@
+@import "../../basic.scss";
+
+.nav {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #c4aff0;
+}
+h1 {
+  color: white;
+  font-size: 30px;
+  margin-left: 30px;
+}
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-right: 20px;
+}
+li {
+  margin-right: 10px;
+  margin-left: 10px;
+  color: #fff;
+}
+li:hover {
+  text-decoration: underline;
+}

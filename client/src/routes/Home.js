@@ -52,57 +52,13 @@ class Home extends React.Component {
       this.setState({
         is_logined: true,
       });
-      //console.log(Cookies.get("login_id"));
     }
-    //console.log(this.props);
+    console.log(Cookies.get);
   }
 
   logout = () => {
     Cookies.remove("login_id");
     window.location.reload();
-  };
-
-  //로그인 여부에 따라 헤더메뉴 변경
-  header_menu = () => {
-    //로그인시 로그아웃 버튼 나오도록
-    if (this.state.is_logined === true) {
-      return (
-        <div className="header_log">
-          <Link
-            to={{
-              pathname: "/",
-              state: {},
-            }}
-          >
-            <li className="logout" onClick={this.logout}>
-              로그아웃
-            </li>
-          </Link>
-        </div>
-      );
-    }
-    //로그인 안했을 시 로그인, 회원가입 버튼 나오도록
-    else {
-      return (
-        <div className="header_log">
-          <Link
-            to={{
-              pathname: "/Login",
-            }}
-          >
-            <li className="login">로그인</li>
-          </Link>
-          <Link
-            to={{
-              pathname: "/Join",
-              state: {},
-            }}
-          >
-            <li className="join">회원가입</li>
-          </Link>
-        </div>
-      );
-    }
   };
 
   //검색 버튼 누를 시(onClick)
@@ -143,41 +99,6 @@ class Home extends React.Component {
         ) : (
           <div className="Home">
             <div id="wrap">
-              <header>
-                <div className="header">
-                  {/* 헤더메뉴 */}
-                  <div className="header_top">
-                    <div className="container">
-                      <ul>
-                        {this.header_menu()}
-                        <Link
-                          to={{
-                            pathname: "/Mypage",
-                            state: {},
-                          }}
-                        >
-                          <li className="mypage">마이페이지</li>
-                        </Link>
-                      </ul>
-                    </div>
-                  </div>
-                  {/* //헤더메뉴 */}
-                  {/* 웹 이름 */}
-                  <div className="header_center">
-                    <div className="container">
-                      <span
-                        onClick={() => {
-                          window.location.reload();
-                        }}
-                      >
-                        <h1 style={{ cursor: "pointer"}}>re-joy</h1>
-                      </span>
-                    </div>
-                  </div>
-                  {/* //웹 이름 */}
-                </div>
-              </header>
-
               <nav>
                 {/* 검색 */}
                 <fieldset id="search">

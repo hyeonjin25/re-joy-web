@@ -6,16 +6,18 @@ import Mypage from "./routes/Mypage";
 import Login from "./routes/Login";
 import Search from "./routes/Search";
 import Detail from "./routes/Detail";
+import Nav from "./components/view/Navbar"
 
 function App() {
   return (
     <HashRouter>
-      <Route path="/" exact={true} component={Home} />
-      <Route path="/Mypage" component={Mypage} />
-      <Route path="/Join" component={Join} />
-      <Route path="/Login" component={Login} />
-      <Route path="/Search/:query" exact={true} component={Search} />
-      <Route path="/Detail/:title" exact={true} component={Detail} />
+      <Nav />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/Mypage" component={Mypage} />
+      <Route exact path="/Join" component={Join} />
+      <Route exact path="/Login" component={Login} />
+      <Route exact path="/Search/:query" component={Search} />
+      <Route exact path="/Detail/:title" component={Detail} />
     </HashRouter>
   );
 }
