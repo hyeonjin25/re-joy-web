@@ -44,8 +44,8 @@ class Detail extends React.Component {
       this.fetchData();
     }
     //로그인 안돼있을 경우 경고
-    else{
-      window.alert("로그인이 필요한 기능입니다!")
+    else {
+      window.alert("로그인이 필요한 기능입니다!");
     }
   };
 
@@ -60,7 +60,7 @@ class Detail extends React.Component {
         this.state.fav_process,
       ])
       .then((respond) => {
-        console.log("즐겨찾기 완료!")
+        console.log("즐겨찾기 완료!");
       })
       .catch((error) => {
         console.log("error :", error.message);
@@ -72,60 +72,12 @@ class Detail extends React.Component {
     const { location } = this.props;
     if (location.state) {
       return (
-        <div id="de_wrap">
-          {/* 헤더 */}
-          <header id="de_header">
-            <div className="header">
-              {/* 헤더메뉴 */}
-              <div className="header_top">
-                <div className="container">
-                  {/* 웹 이름 */}
-                  <Link
-                    style={{ textDecoration: "none" }}
-                    to={{
-                      pathname: "/",
-                    }}
-                  >
-                    <h1>re-joy</h1>
-                  </Link>
-                  {/* //웹 이름 */}
-                  <ul className="link">
-                    <Link
-                      to={{
-                        pathname: "/Login",
-                        state: {},
-                      }}
-                    >
-                      <li className="login">로그인</li>
-                    </Link>
-                    <Link
-                      to={{
-                        pathname: "/Join",
-                        state: {},
-                      }}
-                    >
-                      <li className="join">회원가입</li>
-                    </Link>
-                    <Link
-                      to={{
-                        pathname: "/Mypage",
-                        state: {},
-                      }}
-                    >
-                      <li className="mypage">마이페이지</li>
-                    </Link>
-                  </ul>
-                </div>
-              </div>
-              {/* //헤더메뉴 */}
-            </div>
-          </header>
-          {/* //헤더 */}
-          <main id="de_main">
-            <div id="back_glass_l" className="glass"></div>
-            <div id="back_glass_r" className="glass"></div>
+        <div id='de_wrap'>
+          <main id='de_main'>
+            <div id='back_glass_l' className='glass'></div>
+            <div id='back_glass_r' className='glass'></div>
             <div
-              id="back"
+              id='back'
               style={{
                 width: 1000,
                 height: 500,
@@ -139,67 +91,59 @@ class Detail extends React.Component {
                 zIndex: 1,
               }}
             ></div>
-            <div id="de_movie">
-              <div className="detail movie">
+            <div id='de_movie'>
+              <div className='detail movie'>
                 <button
-                  type="button"
+                  type='button'
                   onClick={this.fav_func}
-                  id="favorite"
-                  value="favorite"
-                  name="favorite"
+                  id='favorite'
+                  value='favorite'
+                  name='favorite'
                   style={{
                     zIndex: "3",
                     //버튼이 클릭됐을 때 구분할 수 있게 색 바꾸기
-                    backgroundColor: this.state.fav_process === true ? "#faf0af" : "",
+                    backgroundColor:
+                      this.state.fav_process === true ? "#faf0af" : "",
                     color: this.state.fav_process === true ? "black" : "",
                   }}
                 >
                   <img
-                    className="star_icon"
+                    className='star_icon'
                     src={require("../img/star_icon.png")}
-                    alt="rating"
+                    alt='rating'
                   />
                 </button>
                 <img
-                  className="poster"
+                  className='poster'
                   src={
                     "https://image.tmdb.org/t/p/w500" + location.state.poster
                   }
                   alt={location.state.title}
                   title={location.state.title}
                 />
-                <div className="movie_data_wrap">
-                  <div className="movie_data">
-                    <h3 className="movie_title">{location.state.title}</h3>
+                <div className='movie_data_wrap'>
+                  <div className='movie_data'>
+                    <h3 className='movie_title'>{location.state.title}</h3>
                     {/* <div>{this.state.adult}</div> */}
-                    <div className="de_movie_rating">
+                    <div className='de_movie_rating'>
                       <img
-                        className="star_icon"
+                        className='star_icon'
                         src={require("../img/star_icon.png")}
-                        alt="rating"
+                        alt='rating'
                       />
-                      <h5 className="rating_text">
+                      <h5 className='rating_text'>
                         평점:&emsp;{location.state.rating}
                       </h5>
                     </div>
-                    <h5 className="movie_year">
+                    <h5 className='movie_year'>
                       개봉일:&emsp;{location.state.date}
                     </h5>
-                    <p className="movie_summary">{location.state.summary}</p>
+                    <p className='movie_summary'>{location.state.summary}</p>
                   </div>
                 </div>
               </div>
             </div>
           </main>
-          <footer>
-            <div className="de_footer">
-              <div className="container">
-                <h2 className="ir_su">푸터</h2>
-                <span>re-joy</span>
-                <div>https://github.com/hyeonjin25/re-joy-web</div>
-              </div>
-            </div>
-          </footer>
         </div>
       );
     } else {

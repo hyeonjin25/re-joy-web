@@ -7,6 +7,7 @@ import Login from "./routes/Login";
 import Search from "./routes/Search";
 import Detail from "./routes/Detail";
 import Nav from "./components/view/Navbar"
+import Footer from "./components/view/Footer"
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route exact path="/Login" component={Login} />
       <Route exact path="/Search/:query" component={Search} />
       <Route exact path="/Detail/:title" component={Detail} />
+      <Footer />
     </HashRouter>
   );
 }

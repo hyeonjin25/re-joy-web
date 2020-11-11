@@ -1,0 +1,9 @@
+@import '../../basic.scss';
+
+/* 푸터 */
+.footer {margin-top:20px; height: 60px;}
+.container {padding:5px; display: flex; flex-flow: column; justify-content: space-around ; align-items: center;
+    border-top: 1px solid #c4aff0}
+div {font-size:13px;}
+ .members {font-size:11px;}
+span {font-size:13px; font-weight: bold;}

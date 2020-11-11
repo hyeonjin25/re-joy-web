@@ -60,66 +60,15 @@ class Search extends React.Component {
     return (
       <div>
         {isLoding ? (
-          <div className="loder">
+          <div className='loder'>
             {/* 로딩창 */}
-            <span className="loder_text">Lodding...</span>
+            <span className='loder_text'>Lodding...</span>
             {/* //로딩창 */}
           </div>
         ) : (
-          <div className="Home">
-            <div id="wrap">
-              <header>
-                <div className="header">
-                  {/* 헤더메뉴 */}
-                  <div className="header_top">
-                    <div className="container">
-                      <ul>
-                        <Link
-                          to={{
-                            pathname: "/Login",
-                            state: {},
-                          }}
-                        >
-                          <li className="login">로그인</li>
-                        </Link>
-                        <Link
-                          to={{
-                            pathname: "/Join",
-                            state: {},
-                          }}
-                        >
-                          <li className="join">회원가입</li>
-                        </Link>
-                        <Link
-                          to={{
-                            pathname: "/Mypage",
-                            state: {},
-                          }}
-                        >
-                          <li className="mypage">마이페이지</li>
-                        </Link>
-                      </ul>
-                    </div>
-                  </div>
-                  {/* //헤더메뉴 */}
-                  {/* 웹 이름 */}
-                  <div className="header_center">
-                    <div className="container">
-                      <Link
-                        style={{ textDecoration: "none" }}
-                        to={{
-                          pathname: "/",
-                        }}
-                      >
-                        <h1>re-joy</h1>
-                      </Link>
-                    </div>
-                  </div>
-                  {/* //웹 이름 */}
-                </div>
-              </header>
-
-              <nav style={{height:30}}>
+          <div className='Home'>
+            <div id='wrap'>
+              <nav style={{ height: 30 }}>
                 {/* 검색 */}
                 {/* <fieldset id="search">
                   <div className="container">
@@ -140,18 +89,18 @@ class Search extends React.Component {
                       </div>
                     </fieldset> */}
                 {/* //검색 */}
-                <div className="container">
+                <div className='container'>
                   <span>"{this.state.query}"에 대한 검색결과...</span>
                 </div>
               </nav>
 
               <main>
                 {/* 검색결과 */}
-                <div className="recommend">
-                  <div className="container">
+                <div className='recommend'>
+                  <div className='container'>
                     <section>
                       <div style={{ padding: 37, paddingTop: 10 }}>
-                        <h3 className="ir_su">search results</h3>
+                        <h3 className='ir_su'>search results</h3>
                         <div style={{ display: "flex", flexWrap: "wrap" }}>
                           {/* 검색결과 배열 불러오기 */}
                           {query_results.map((response) => (
@@ -180,16 +129,6 @@ class Search extends React.Component {
                 </div>
                 {/* //검색결과 */}
               </main>
-
-              <footer>
-                <div className="footer">
-                  <div className="container">
-                    <h2 className="ir_su">푸터</h2>
-                    <span>re-joy</span>
-                    <div>https://github.com/hyeonjin25/re-joy-web</div>
-                  </div>
-                </div>
-              </footer>
             </div>
           </div>
         )}

@@ -184,15 +184,6 @@ class Home extends React.Component {
                 </div>
                 {/* //분류 */}
               </main>
-              <footer>
-                <div className="footer">
-                  <div className="container">
-                    <h2 className="ir_su">푸터</h2>
-                    <span>re-joy</span>
-                    <div>https://github.com/hyeonjin25/re-joy-web</div>
-                  </div>
-                </div>
-              </footer>
             </div>
           </div>
         )}

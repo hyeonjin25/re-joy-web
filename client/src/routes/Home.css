@@ -41,10 +41,3 @@ main .recommend .container .tvshows {margin:0 auto; width: 1030px; padding-top:6
 main .category {height: 0;}
 /* main .category .container {background-color: rgba(50,50,50,0.8);} */
 
-/* 푸터 */
-footer .footer {margin-top:20px; height: 60px;}
-footer .footer .container {padding:5px; display: flex; flex-flow: column; justify-content: space-around ; align-items: center;
-    border-top: 1px solid #c4aff0}
-footer .footer .container div {font-size:13px;}
-footer .footer .container .members {font-size:11px;}
-footer .footer .container span {font-size:13px; font-weight: bold;}
