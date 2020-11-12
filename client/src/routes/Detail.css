@@ -1,9 +1,9 @@
 
 /* 메인 */
 #de_main {display:flex; justify-content: center; flex-wrap: wrap; height: 550px; background-color:black;}
-#back_glass_l {width: 100%; height: 530px; top:70px; left:0; z-index: 2;
+#back_glass_l {width: 100%; height: 590px; top:70px; left:0; z-index: 2;
     background: linear-gradient(to right,rgba(0,0,0,1)10%,rgba(0,0,0,0.2)60%,rgba(0,0,0,0.2)30%)}
-#back_glass_r {width: 100%; height: 530px; top:70px; left:0; z-index: 2;
+#back_glass_r {width: 100%; height: 590px; top:70px; left:0; z-index: 2;
     background: linear-gradient(to left,rgba(0,0,0,1)10%,rgba(0,0,0,0.2)60%,rgba(0,0,0,0.2)30%)}
 #back {margin-top:30px;}
 #de_movie {position: absolute; top:70px; z-index: 3}
@@ -19,11 +19,3 @@
 .detail .movie_data .de_movie_rating {margin:5px;}
 .detail .movie_data .movie_year {margin:5px;}
 .detail .movie_data .movie_summary {margin:5px;}
-
-/* 푸터 */
-.de_footer {margin-top:0px; background-color:black;}
-.de_footer {height: 60px;}
-.de_footer .container {padding:5px; display: flex; flex-flow: column; justify-content: space-around ; align-items: center;
-    border-top: 1px solid #c4aff0;}
-.de_footer .container div {font-size:13px;}
-.de_footer .container span {font-size:13px; font-weight: bold;}
