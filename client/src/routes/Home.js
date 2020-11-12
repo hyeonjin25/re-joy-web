@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
-import { Link } from "react-router-dom";
+import Searchbar from "../components/view/Searchbar";
 import Movie from "../components/Movie";
 import Tvshow from "../components/Tvshow";
 import "../components/reset.css";
@@ -46,35 +46,12 @@ class Home extends React.Component {
   componentDidMount() {
     this.getMovies();
     this.getTvshows();
-    //로그인이 되어있는지 확인하기
-    if (Cookies.get("login_id")) {
-      //로그인 되어있을 경우
-      this.setState({
-        is_logined: true,
-      });
-    }
-    console.log(Cookies.get);
   }
 
+  //로그아웃
   logout = () => {
     Cookies.remove("login_id");
     window.location.reload();
-  };
-
-  //검색 버튼 누를 시(onClick)
-  onSearch_click = async () => {
-    //검색어 입력 했을시에만
-    if (this.state.query !== "") {
-      this.props.history.push({
-        pathname: "/Search/" + this.state.query,
-        state: this.state.query,
-      });
-    }
-  };
-
-  //검색창에 데이터 입력시(onChange)
-  onSearch = (e) => {
-    this.setState({ query: e.target.value });
   };
 
   render() {
@@ -89,50 +66,28 @@ class Home extends React.Component {
     };
 
     return (
-      <section className="cont">
+      <section className='cont'>
         {m_isLoding && t_isLoding ? (
-          <div className="loder">
+          <div className='loder'>
             {/* 로딩창 */}
-            <span className="loder_text">Lodding...</span>
+            <span className='loder_text'>Lodding...</span>
             {/* //로딩창 */}
           </div>
         ) : (
-          <div className="Home">
-            <div id="wrap">
-              <nav>
-                {/* 검색 */}
-                <fieldset id="search">
-                  <div className="container">
-                    <legend className="ir_su">search</legend>
-                    <form className="search_cont">
-                      <input
-                        type="text"
-                        value={this.state.query}
-                        onChange={this.onSearch}
-                        id="input_search"
-                        placeholder="search"
-                        maxLength="50"
-                      />
-                      <button type="submit" onClick={this.onSearch_click}>
-                        <span className="search_button"></span>
-                      </button>
-                    </form>
-                  </div>
-                </fieldset>
-                {/* //검색 */}
-              </nav>
-
+          <div className='Home'>
+            <div id='wrap'>
+              <Searchbar />
               <main>
                 {/* 추천 */}
-                <div className="recommend">
-                  <div className="container">
-                    <div className="glass"></div>
-                    <div className="glass second_glass"></div>
+                <div className='recommend'>
+                  <div className='container'>
+                    <div className='glass'></div>
+                    <div className='glass second_glass'></div>
                     <section>
                       <div>
-                        <h3 className="ir_su">recommend</h3>
-                        <div className="movies">
-                          <h3 className="recommend_sort_title">추천 영화</h3>
+                        <h3 className='ir_su'>recommend</h3>
+                        <div className='movies'>
+                          <h3 className='recommend_sort_title'>추천 영화</h3>
                           <Slick {...slick_settings}>
                             {movies.map((movie) => (
                               <Movie
@@ -150,8 +105,8 @@ class Home extends React.Component {
                             ))}
                           </Slick>
                         </div>
-                        <div className="tvshows">
-                          <h3 className="recommend_sort_title">추천 티비쇼</h3>
+                        <div className='tvshows'>
+                          <h3 className='recommend_sort_title'>추천 티비쇼</h3>
                           <Slick {...slick_settings}>
                             {tvshows.map((tvshow) => (
                               <Tvshow
@@ -175,10 +130,10 @@ class Home extends React.Component {
                 </div>
                 {/* //추천 */}
                 {/* 분류 */}
-                <div className="category">
-                  <div className="container">
+                <div className='category'>
+                  <div className='container'>
                     <section>
-                      <h3 className="ir_su">분류</h3>
+                      <h3 className='ir_su'>분류</h3>
                     </section>
                   </div>
                 </div>

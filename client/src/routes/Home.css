@@ -9,24 +9,6 @@ body {background-color:#535962;}
 .loder {width: inherit; height: inherit; display: flex; justify-content: center; align-items: center; background-color: #faf4ff;}
 .loder .loder_text {font-weight: bold;}
 
-/* 헤더 */
-header {position: relative;}
-header .header_center {display:flex; height: 130px;}
-header .header_center .container {display:flex; justify-content: center; align-items: center; height: 130px;}
-header .header_center h1 {color:#fff ; font-size: 40px;}
-
-/* 네비게이션 - 검색 */
-nav {height: 80px;}
-nav #search {margin-bottom: 30px}
-nav #search .container {height: 50px; display:flex; justify-content: center; align-items: center;}
-nav #search .search_cont {position: relative;}
-nav #search .search_cont input {width:1080px; height: 40px; padding: 1px 8px 1px 8px; border: 3px solid #c4aff0; background-color: rgba(30,30,30,0.4);
-    color:#fff; font-size: 15px;}
-nav #search .search_cont button {position: absolute; top: 0; right: 0; width: 48px; height: 100%; margin-left: -1px; border: 3px solid #c4aff0; 
-    background: url(../img/search_icon.png) no-repeat #c4aff0; background-position: 7px 8px; background-size:25px 25px;}
-nav #search .search_cont button:active {border-color:#A566FF;}
-nav #search .search_cont .search_button {display: inline-block;}
-
 
 /* 컨텐츠 - 추천 */
 main .recommend .container {background-color:#dddddd; position: relative;}
