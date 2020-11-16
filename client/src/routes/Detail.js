@@ -23,7 +23,7 @@ class Detail extends React.Component {
     //페이지가 이동되어 올 떄 스크롤 맨 위로 올리기
     window.scrollTo(0, 0);
 
-    document.body.style.backgroundColor = "black";
+    // document.body.style.backgroundColor = "black";
 
     //   //청소년 관람불가인지 확인
     //   if (location.state.adult === true)
@@ -75,12 +75,11 @@ class Detail extends React.Component {
         <div id='de_wrap'>
           <main id='de_main'>
             <div id='back_glass_l' className='glass'></div>
-            <div id='back_glass_r' className='glass'></div>
             <div
               id='back'
               style={{
-                width: 1000,
-                height: 500,
+                width: '1000px',
+                height: '500px',
                 backgroundImage:
                   "url(https://image.tmdb.org/t/p/w500" +
                   location.state.backdrop +
