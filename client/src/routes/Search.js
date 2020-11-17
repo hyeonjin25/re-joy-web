@@ -1,13 +1,13 @@
 import React from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import SearchRes from "../components/SearchRes";
+import Searchbar from "../components/view/Searchbar";
 import "../components/reset.css";
 import "./Home.css";
 
 class Search extends React.Component {
   state = {
-    query: this.props.match.params.query,
+    query: "",
     query_results: [],
     isLoding: true,
   };
@@ -31,15 +31,16 @@ class Search extends React.Component {
       });
   };
 
-  componentDidMount() {
+  componentDidMount = async () => {
     const { location, history, match } = this.props;
     //검색을 통해 페이지로 들어온게 아닌경우 강제로 홈으로 이동시킴(state가 undefined일 떄)
     if (location.state === undefined) {
       history.push("/");
     }
-    this.setState({ query: match.params.query });
+    await this.setState({ query: match.params.query });
+    console.log(this.state.query)
     this.getSearchRes();
-  }
+  };
 
   //검색 버튼 누를 시(onClick)
   onSearch_click = async () => {
@@ -56,7 +57,7 @@ class Search extends React.Component {
   };
 
   render() {
-    const { query, query_results, isLoding } = this.state;
+    const { query_results, isLoding } = this.state;
     return (
       <div>
         {isLoding ? (
@@ -70,24 +71,7 @@ class Search extends React.Component {
             <div id='wrap'>
               <nav style={{ height: 30 }}>
                 {/* 검색 */}
-                {/* <fieldset id="search">
-                  <div className="container">
-                  <legend className="ir_su">search</legend>
-                  <form className="search_cont">
-                      <input
-                      type="text"
-                        value={this.state.query}
-                        onChange={this.onSearch}
-                        id="input_search"
-                        placeholder="search"
-                        maxLength="50"
-                        />
-                        <button type="submit" onClick={this.onSearch_click}>
-                        <span className="search_button"></span>
-                      </button>
-                      </form>
-                      </div>
-                    </fieldset> */}
+                <Searchbar />
                 {/* //검색 */}
                 <div className='container'>
                   <span>"{this.state.query}"에 대한 검색결과...</span>
@@ -99,7 +83,9 @@ class Search extends React.Component {
                 <div className='recommend'>
                   <div className='container'>
                     <section>
-                      <div style={{ padding: 37, paddingTop: 10 }}>
+                      <div
+                        style={{ padding: 37, paddingTop: 10, marginTop: 60 }}
+                      >
                         <h3 className='ir_su'>search results</h3>
                         <div style={{ display: "flex", flexWrap: "wrap" }}>
                           {/* 검색결과 배열 불러오기 */}

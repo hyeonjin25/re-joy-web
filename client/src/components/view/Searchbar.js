@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import style from "./Searchbar.module.scss";
+import axios from "axios"
+import {withRouter} from "react-router-dom"
 
-function Searchbar() {
+function Searchbar(props) {
   const [Query, setQuery] = useState("");
 
   //검색 버튼 누를 시(onClick)
   const onSearch_click = async () => {
     //검색어 입력 했을시에만
     if (Query !== "") {
-      this.props.history.push({
+      props.history.push({
         pathname: "/Search/" + Query,
         state: Query,
       });
@@ -40,4 +42,4 @@ function Searchbar() {
   );
 }
 
-export default Searchbar;
+export default withRouter(Searchbar);
