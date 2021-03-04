@@ -4,15 +4,14 @@ import axios from "axios"
 import {withRouter} from "react-router-dom"
 
 function Searchbar(props) {
-  const [Query, setQuery] = useState("");
+  const [query, setQuery] = useState("");
 
   //검색 버튼 누를 시(onClick)
   const onSearch_click = async () => {
     //검색어 입력 했을시에만
-    if (Query !== "") {
+    if (query !== "") {
       props.history.push({
-        pathname: "/Search/" + Query,
-        state: Query,
+        pathname: `/Search?q=${query}`
       });
     }
   };
@@ -28,7 +27,7 @@ function Searchbar(props) {
       <form className={style.search_cont}>
         <input
           type='text'
-          value={Query}
+          value={query}
           onChange={onSearch}
           id='input_search'
           placeholder='search'
