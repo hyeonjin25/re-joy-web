@@ -34,12 +34,13 @@ class Search extends React.Component {
   componentDidMount = async () => {
     const { location, history, match } = this.props;
     //검색을 통해 페이지로 들어온게 아닌경우 강제로 홈으로 이동시킴(state가 undefined일 떄)
-    if (location.state === undefined) {
-      history.push("/");
-    }
-    await this.setState({ query: match.params.query });
-    console.log(this.state.query)
-    this.getSearchRes();
+    // if (location.state === undefined) {
+    //   history.push("/");
+    // }
+    console.log(location)
+      // await this.setState({ query: match.params.query });
+      // console.log(this.state.query)
+      // this.getSearchRes();
   };
 
   //검색 버튼 누를 시(onClick)
